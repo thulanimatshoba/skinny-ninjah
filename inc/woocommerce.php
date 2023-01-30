@@ -43,7 +43,7 @@ add_action( 'after_setup_theme', 'skinny_ninjah_woocommerce_setup' );
  * @return void
  */
 function skinny_ninjah_woocommerce_scripts() {
-	wp_enqueue_style( 'skinny-ninjah-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), _S_VERSION );
+	wp_enqueue_style( 'skinny-ninjah-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), SKINNY_NINJAH_VERSION );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
