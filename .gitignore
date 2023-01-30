@@ -1,0 +1,22 @@
+# Skinny Ninjah Theme .gitignore
+
+
+# File Types
+*.map
+
+# Cache directories
+.sass-cache/
+
+# package directories
+node_modules
+vendor/
+bower_components/
+wiki/
+package-lock.json
+
+bower.json
+component.json
+
+.DS_Store
+
+assets/**/*.map
