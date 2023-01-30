@@ -1,6 +1,6 @@
 === Skinny Ninjah ===
 
-Contributors: automattic
+Contributors: thulani-matshoba
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 Requires at least: 4.5
@@ -30,7 +30,7 @@ Skinny Ninjah includes support for WooCommerce and for Infinite Scroll in Jetpac
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
+= 1.0 - Jan 30 2023 =
 * Initial release
 
 == Credits ==
