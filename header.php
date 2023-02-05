@@ -17,6 +17,27 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+
+
+    <script type="text/human">
+
+		      ,gg,                                                             ,ggg, ,ggggggg,
+		     i8""8i   ,dPYb,                                                  dP""Y8,8P"""""Y8b                                          ,dPYb,
+		     `8,,8'   IP'`Yb                                                  Yb, `8dP'     `88                                          IP'`Yb
+		      `88'    I8  8I      gg                                           `"  88'       88   gg                     gg              I8  8I
+		      dP"8,   I8  8bgg,   ""                                               88        88   ""                     ""              I8  8'
+		     dP' `8a  I8 dP" "8   gg    ,ggg,,ggg,    ,ggg,,ggg,   gg     gg       88        88   gg    ,ggg,,ggg,       gg    ,gggg,gg  I8 dPgg,
+		    dP'   `Yb I8d8bggP"   88   ,8" "8P" "8,  ,8" "8P" "8,  I8     8I       88        88   88   ,8" "8P" "8,      8I   dP"  "Y8I  I8dP" "8I
+		_ ,dP'     I8 I8P' "Yb,   88   I8   8I   8I  I8   8I   8I  I8,   ,8I       88        88   88   I8   8I   8I     ,8I  i8'    ,8I  I8P    I8
+		"888,,____,dP,d8    `Yb,_,88,_,dP   8I   Yb,,dP   8I   Yb,,d8b, ,d8I       88        Y8,_,88,_,dP   8I   Yb,  _,d8I ,d8,   ,d8b,,d8     I8,
+		a8P"Y88888P" 88P      Y88P""Y88P'   8I   `Y88P'   8I   `Y8P""Y88P"888      88        `Y88P""Y88P'   8I   `Y8888P"888P"Y8888P"`Y888P     `Y8
+		                                                                ,d8I'                                          ,d8I'
+		                                                              ,dP'8I                                         ,dP'8I
+		                                                             ,8"  8I                                        ,8"  8I
+		                                                             I8   8I                                        I8   8I
+		                                                             `8, ,8I                                        `8, ,8I
+		                                                              `Y8P"                                          `Y8P"
+		</script>
 	<?php wp_head(); ?>
 </head>
 
@@ -25,35 +46,6 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'skinny-ninjah' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$skinny_ninjah_description = get_bloginfo( 'description', 'display' );
-			if ( $skinny_ninjah_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $skinny_ninjah_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'skinny-ninjah' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+    <?php
+    get_template_part('partials/header/off-canvas');
+    get_template_part('partials/header/header'); ?>
