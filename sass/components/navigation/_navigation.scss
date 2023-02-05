@@ -1,12 +1,8 @@
 .main-navigation {
 	display: block;
-	width: 100%;
 
 	ul {
-		display: none;
 		list-style: none;
-		margin: 0;
-		padding-left: 0;
 
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -50,7 +46,6 @@
 	}
 
 	li {
-		position: relative;
 
 		&:hover > a,
 		&.focus > a {
@@ -66,23 +61,6 @@
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
-	}
-}
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
-@media screen and (min-width: 37.5em) {
-
-	.menu-toggle {
-		display: none;
-	}
-
-	.main-navigation ul {
-		display: flex;
 	}
 }
 
