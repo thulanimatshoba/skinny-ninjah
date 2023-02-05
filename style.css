@@ -764,6 +764,7 @@ header {
 	top: 100%;
 	left: -999em;
 	z-index: 99999;
+	background: #f00;
 }
 
 .main-navigation ul ul ul {
