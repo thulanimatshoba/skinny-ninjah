@@ -40,7 +40,7 @@ function skinny_ninjah_setup() {
             'header' => esc_html__( 'Header Menu', 'skinny-ninjah' ),
             'footer' => esc_html__( 'Footer Menu', 'skinny-ninjah' ),
             'social' => esc_html__('Social Menu', 'skinny-ninjah'),
-            'offcanvas' => esc_html__( 'Off Canvas Menu', 'skinny-ninjah' ),
+            'off-canvas' => esc_html__( 'Off Canvas Menu', 'skinny-ninjah' ),
         ]
     );
 
