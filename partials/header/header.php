@@ -1,4 +1,4 @@
-<header id="masthead" class="uk-width-1-1 uk-position-absolute site-header">
+<header id="masthead" class="uk-width-1-1 uk-position-absolute uk-position-z-index site-header">
     <div class="uk-container uk-navbar">
         <div class="site-branding uk-navbar-left">
             <?php get_template_part('partials/header/logo'); ?>

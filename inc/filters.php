@@ -34,12 +34,18 @@ function skinny_ninjah_setup() {
         */
     add_theme_support( 'post-thumbnails' );
 
+    /**
+     * Thumbnail  Custom Sizes
+     */
+    add_image_size('featured-thumb', 600, 320, ['center', 'center']);
+    add_image_size('featured-square', 300, 300, ['center', 'center']);
+    add_image_size('featured-big', 1600, 780, ['center', 'center']);
+
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus(
         [
             'header' => esc_html__( 'Header Menu', 'skinny-ninjah' ),
             'footer' => esc_html__( 'Footer Menu', 'skinny-ninjah' ),
-            'social' => esc_html__('Social Menu', 'skinny-ninjah'),
             'off-canvas' => esc_html__( 'Off Canvas Menu', 'skinny-ninjah' ),
         ]
     );
