@@ -1,4 +1,5 @@
 <?php
+if (!function_exists('skinny_ninjah_setup')) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -33,11 +34,20 @@ function skinny_ninjah_setup() {
         */
     add_theme_support( 'post-thumbnails' );
 
+    /**
+     * Thumbnail  Custom Sizes
+     */
+    add_image_size('featured-thumb', 600, 320, ['center', 'center']);
+    add_image_size('featured-square', 300, 300, ['center', 'center']);
+    add_image_size('featured-big', 1600, 780, ['center', 'center']);
+
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus(
-        array(
-            'menu-1' => esc_html__( 'Primary', 'skinny-ninjah' ),
-        )
+        [
+            'header' => esc_html__( 'Header Menu', 'skinny-ninjah' ),
+            'footer' => esc_html__( 'Footer Menu', 'skinny-ninjah' ),
+            'off-canvas' => esc_html__( 'Off Canvas Menu', 'skinny-ninjah' ),
+        ]
     );
 
     /*
@@ -46,7 +56,7 @@ function skinny_ninjah_setup() {
         */
     add_theme_support(
         'html5',
-        array(
+        [
             'search-form',
             'comment-form',
             'comment-list',
@@ -54,7 +64,7 @@ function skinny_ninjah_setup() {
             'caption',
             'style',
             'script',
-        )
+        ]
     );
 
     // Set up the WordPress core custom background feature.
@@ -62,10 +72,10 @@ function skinny_ninjah_setup() {
         'custom-background',
         apply_filters(
             'skinny_ninjah_custom_background_args',
-            array(
+            [
                 'default-color' => 'ffffff',
                 'default-image' => '',
-            )
+            ]
         )
     );
 
@@ -79,14 +89,15 @@ function skinny_ninjah_setup() {
      */
     add_theme_support(
         'custom-logo',
-        array(
+        [
             'height'      => 250,
             'width'       => 250,
             'flex-width'  => true,
             'flex-height' => true,
-        )
+        ]
     );
 }
+endif;
 add_action( 'after_setup_theme', 'skinny_ninjah_setup' );
 
 /**
@@ -108,7 +119,7 @@ add_action( 'after_setup_theme', 'skinny_ninjah_content_width', 0 );
  */
 function skinny_ninjah_widgets_init() {
     register_sidebar(
-        array(
+        [
             'name'          => esc_html__( 'Sidebar', 'skinny-ninjah' ),
             'id'            => 'sidebar-1',
             'description'   => esc_html__( 'Add widgets here.', 'skinny-ninjah' ),
@@ -116,7 +127,7 @@ function skinny_ninjah_widgets_init() {
             'after_widget'  => '</section>',
             'before_title'  => '<h2 class="widget-title">',
             'after_title'   => '</h2>',
-        )
+        ]
     );
 }
 add_action( 'widgets_init', 'skinny_ninjah_widgets_init' );
