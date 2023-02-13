@@ -7,7 +7,7 @@ $slider_link_2 = carbon_get_the_post_meta('skinny_ninjah_slider_link_2');
  ?>
 
 
-<div uk-slider="autoplay: false; autoplay-interval: 9000" uk-slideshow="animation: push">
+<div uk-slider="autoplay: true; autoplay-interval: 9000" uk-slideshow="animation: push">
     <div class="uk-position-relative uk-visible-toggle" tabindex="-1">
         <div class="uk-slider-items uk-width-1-1">
             <?php
@@ -38,4 +38,5 @@ $slider_link_2 = carbon_get_the_post_meta('skinny_ninjah_slider_link_2');
         <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
     </div>
     <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+</div>
 

@@ -20,7 +20,6 @@ get_header();
         <?php get_template_part('partials/components/homepage-slider') ?>
     </div>
     <div class="skinny-ninjah-overlay"></div>
-
 <?php endif; ?>
 
     <div id="primary" class="content-area">
