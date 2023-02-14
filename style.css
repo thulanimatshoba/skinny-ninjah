@@ -737,6 +737,77 @@ big {
 	outline: 0;
 }
 
+.social-links a::before {
+	display: inline-block;
+	padding: 0 5px;
+	font-family: 'FontAwesome';
+	font-size: 25px;
+	vertical-align: middle;
+	-webkit-font-smoothing: antialiased;
+	background-color: transparent;
+	color: #fff;
+}
+
+.social-links a[href*="facebook.com"]::before {
+	content: '\f082';
+}
+
+.social-links a[href*="twitter.com"]::before {
+	content: '\f099';
+}
+
+.social-links a[href*="plus.google.com"]::before {
+	content: '\f0d4';
+}
+
+.social-links a[href*="pinterest.com"]::before {
+	content: '\f0d3';
+}
+
+.social-links a[href*="youtube.com"]::before {
+	content: '\f167';
+}
+
+.social-links a[href*="vimeo.com"]::before {
+	content: '\f194';
+}
+
+.social-links a[href*="instagram.com"]::before {
+	content: '\f16d';
+}
+
+.social-links a[href*="linkedin.com"]::before {
+	content: '\f08c';
+}
+
+.social-links a[href*="rss.com"]::before {
+	content: '\f143';
+}
+
+.social-links a[href*="dropbox.com"]::before {
+	content: '\f16b';
+}
+
+.social-links a[href*="skype.com"]::before {
+	content: '\f17e';
+}
+
+.social-links a:hover[href*="facebook.com"]::before {
+	color: #3b5998;
+}
+
+.social-links a:hover[href*="twitter.com"]::before {
+	color: #33ccff;
+}
+
+.social-links a:hover[href*="instagram.com"]::before {
+	color: #336699;
+}
+
+.social-links a:hover[href*="youtube.com"]::before {
+	color: #c4302b;
+}
+
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
@@ -837,6 +908,16 @@ big {
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+footer#colophon {
+	background: #191919;
+	color: #666;
+}
+
+footer#colophon .site-info {
+	background-color: transparent;
+	background-image: linear-gradient(275deg, #191919 39%, #f00 100%);
 }
 
 /* Comments

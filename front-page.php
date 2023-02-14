@@ -31,5 +31,4 @@ get_header();
         </main><!-- #main -->
     </div><!-- #primary -->
 <?php
-get_template_part('partials/components/social-media');
 get_footer();
