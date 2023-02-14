@@ -21,3 +21,14 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+
+footer#colophon {
+    background: $color_footer_bg;
+	color: $color__border-abbr;
+
+	.site-info {
+		background-color: transparent;
+		background-image: linear-gradient(275deg, $color_footer_bg 39%, $color_red 100%);
+	}
+}

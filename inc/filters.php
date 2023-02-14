@@ -129,5 +129,49 @@ function skinny_ninjah_widgets_init() {
             'after_title'   => '</h2>',
         ]
     );
+    register_sidebar(
+        [
+            'name'          => esc_html__( 'Footer One', 'skinny-ninjah' ),
+            'id'            => 'footer-one',
+            'description'   => esc_html__( 'Add widgets here.', 'skinny-ninjah' ),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        ]
+    );
+    register_sidebar(
+        [
+            'name'          => esc_html__( 'Footer Two', 'skinny-ninjah' ),
+            'id'            => 'footer-two',
+            'description'   => esc_html__( 'Add widgets here.', 'skinny-ninjah' ),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        ]
+    );
+    register_sidebar(
+        [
+            'name'          => esc_html__( 'Footer Three', 'skinny-ninjah' ),
+            'id'            => 'footer-three',
+            'description'   => esc_html__( 'Add widgets here.', 'skinny-ninjah' ),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        ]
+    );
+    register_sidebar(
+        [
+            'name'          => esc_html__( 'Footer Four', 'skinny-ninjah' ),
+            'id'            => 'footer-four',
+            'description'   => esc_html__( 'Add widgets here.', 'skinny-ninjah' ),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        ]
+    );
 }
 add_action( 'widgets_init', 'skinny_ninjah_widgets_init' );

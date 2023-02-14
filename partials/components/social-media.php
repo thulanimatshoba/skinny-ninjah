@@ -6,11 +6,10 @@ if ($social_links) : ?>
     <div class="social-links">
         <?php
             foreach ( $social_links as $link ) :
-                echo '<a 
-                        class="' . esc_html( $link['skinny_ninjah_social_label'] ) . '" 
+                echo '<a  
                         href="' . esc_url( $link['skinny_ninjah_social_url'] ) . '" 
-                        target="_blank">' . esc_html( $link['skinny_ninjah_social_label'] ) .
-                    '</a>';
+                        target="_blank"><span class="screen-reader-text">' . esc_html( $link['skinny_ninjah_social_label'] ) .
+                    '</span></a>';
                 endforeach; ?>
     </div>
 <?php endif;
