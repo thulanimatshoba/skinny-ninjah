@@ -1,6 +1,39 @@
+/* Home Page Styling */
+.slider-image img {
+	width: 100%;
+}
+
+.slider-image {
+	img {
+		width: 100%;
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background-color: rgba(0,0,0,0.3);
+	}
+}
+
+
+
 .sticky {
 	display: block;
 }
+
+// .skinny-ninjah-overlay {
+//     content: "";
+//     position: absolute;
+//     left: 0;
+//     right: 0;
+//     top: 0;
+//     bottom: 0;
+//     background-color: rgba(0,0,0,0.3);
+// }
 
 .post,
 .page {
@@ -23,6 +56,8 @@
 }
 
 
+
+/* Footer */
 footer#colophon {
     background: $color_footer_bg;
 	color: $color__border-abbr;

@@ -1,6 +1,7 @@
 <?php
 
 use Carbon_Fields\Block;
+use Carbon_Fields\Carbon_Fields;
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
@@ -14,20 +15,51 @@ function skinny_ninjah_post_meta()
             Field::make('complex', 'skinny_ninjah_slider', 'Add your slides below.')
                 ->set_layout('tabbed-vertical')
                 ->add_fields([
-                    Field::make('image', 'skinny_ninjah_slider_image', 'Slider Image')
-                        ->set_width(30),
-
+                    Field::make('image', 'skinny_ninjah_slider_image', 'Slider Image'),
+                    Field::make( 'select', 'show_slider_heading', 'Show Heading' )
+                        ->add_options(
+                            [
+                                'yes' => 'Yes',
+                                'no' => 'No',
+                            ]
+                        ),
                     Field::make('text', 'skinny_ninjah_slider_name', 'Heading')
                         ->set_width(30)
                         ->set_attribute('placeholder', 'Slider Heading')
                         ->set_default_value( 'Slider Heading Lorem Ipsum' )
-                        ->set_help_text( 'Enter your slider heading' ),
+                        ->set_help_text( 'Enter your slider heading' )
+                        ->set_conditional_logic(
+                            [
+                                'relation' => 'AND',
+                                [
+                                    'field' => 'show_slider_heading',
+                                    'value' => 'yes',
+                                    'compare' => '=',
+                                ]
+                            ]
+                        ),
 
+                    Field::make( 'select', 'show_slider_description', 'Show Description' )
+                        ->add_options(
+                            [
+                                'yes' => 'Yes',
+                                'no' => 'No',
+                            ]
+                        ),
                     Field::make('textarea', 'skinny_ninjah_slider_description', 'Description')
-                        ->set_width(30)
                         ->set_attribute('placeholder', 'Slider Description')
                         ->set_default_value( 'Slider Description Lorem Ipsum dolor sit amet' )
-                        ->set_help_text( 'Enter your slider description' ),
+                        ->set_help_text( 'Enter your slider description' )
+                        ->set_conditional_logic(
+                            [
+                                'relation' => 'AND',
+                                [
+                                    'field' => 'show_slider_description',
+                                    'value' => 'yes',
+                                    'compare' => '=',
+                                ]
+                            ]
+                        ),
 
                     Field::make('text', 'skinny_ninjah_slider_link_label_1', 'Slider Link Label One')
                         ->set_width(20)
@@ -50,11 +82,11 @@ function skinny_ninjah_post_meta()
                         ->set_help_text( 'Enter your button link url' ),
 
                     Field::make( 'color', 'skinny_ninjah_slider_title_color', 'Heading Color' )
-                        ->set_alpha_enabled( true )
+                        ->set_alpha_enabled()
                         ->set_width(30),
 
                     Field::make( 'color', 'skinny_ninjah_slider_desc_color', 'Description Color' )
-                        ->set_alpha_enabled( true )
+                        ->set_alpha_enabled()
                         ->set_width(30),
                 ])
                 ->set_header_template(
@@ -78,7 +110,7 @@ function skinny_ninjah_post_meta()
                     Field::make( 'text', 'skinny_ninjah_social_label', 'Social Label' )
                         ->set_attribute('placeholder', 'Facebook')
                         ->set_help_text( 'Enter your social media label' )
-                        ->set_width( 50 ) // condense layout so field takes only 50% of the available width
+                        ->set_width( 50 )
                         ->set_required(),
 
                     Field::make( 'text', 'skinny_ninjah_social_url', 'Social URL' )
@@ -146,5 +178,5 @@ add_action('after_setup_theme', 'skinny_ninjah_load');
 
 function skinny_ninjah_load()
 {
-    \Carbon_Fields\Carbon_Fields::boot();
+    Carbon_Fields::boot();
 }
