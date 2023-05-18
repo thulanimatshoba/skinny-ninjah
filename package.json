@@ -18,9 +18,9 @@
     "url": "https://github.com/thulanimatshoba/skinny-ninjah/issues"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^19.2.2",
+    "@wordpress/scripts": "^17.1.0",
     "dir-archiver": "^1.1.1",
-    "node-sass": "^7.0.1",
+    "node-sass": "^8.0.0",
     "rtlcss": "^3.5.0"
   },
   "rtlcssConfig": {

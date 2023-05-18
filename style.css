@@ -886,6 +886,33 @@ big {
 
 /* Posts and pages
 --------------------------------------------- */
+/* Home Page Styling */
+.home header#masthead {
+	position: absolute;
+}
+
+.home header#masthead.uk-sticky-below {
+	background: black;
+}
+
+.slider-image img {
+	width: 100%;
+}
+
+.slider-image img {
+	width: 100%;
+}
+
+.slider-image:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
 .sticky {
 	display: block;
 }
@@ -910,6 +937,7 @@ big {
 	margin: 0 0 1.5em;
 }
 
+/* Footer */
 footer#colophon {
 	background: #191919;
 	color: #666;
