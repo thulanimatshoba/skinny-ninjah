@@ -887,6 +887,14 @@ big {
 /* Posts and pages
 --------------------------------------------- */
 /* Home Page Styling */
+.home header#masthead {
+	position: absolute;
+}
+
+.home header#masthead.uk-sticky-below {
+	background: black;
+}
+
 .slider-image img {
 	width: 100%;
 }
