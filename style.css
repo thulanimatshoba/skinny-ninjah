@@ -887,6 +887,7 @@ big {
 /* Posts and pages
 --------------------------------------------- */
 /* Home Page Styling */
+/* Header */
 .home header#masthead {
 	position: absolute;
 }
@@ -895,6 +896,7 @@ big {
 	background: black;
 }
 
+/* Home Page Slider */
 .slider-image img {
 	width: 100%;
 }
@@ -911,6 +913,60 @@ big {
 	top: 0;
 	bottom: 0;
 	background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Home Page Info Block */
+.info-block {
+	background: #2f2928;
+}
+
+.info-block li.info-block-list .list-container:after {
+	content: "";
+	width: 30px;
+	height: 2px;
+	display: block;
+	margin: 10px auto 0;
+	background: #998675;
+}
+
+.info-block li.info-block-list i.fa {
+	font-size: 50px;
+}
+
+.info-block li.info-block-list i.fa.fa-comments-o:before {
+	content: "\f0e6";
+}
+
+.info-block li.info-block-list h4:after {
+	content: "+";
+}
+
+#primary.content-area {
+	width: 100%;
+	background: #fff;
+	margin-bottom: 0;
+}
+
+@media only screen and (min-width: 640px) {
+	#primary.content-area {
+		margin-bottom: 405px;
+	}
+}
+
+/* Footer */
+footer#colophon {
+	width: 100%;
+	position: relative;
+	z-index: 1;
+}
+
+@media only screen and (min-width: 640px) {
+	footer#colophon {
+		position: fixed;
+		z-index: -1;
+		bottom: 0;
+		left: 0;
+	}
 }
 
 .sticky {

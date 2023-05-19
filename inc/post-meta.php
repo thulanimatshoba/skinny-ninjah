@@ -99,6 +99,34 @@ function skinny_ninjah_post_meta()
                 ),
         ]);
 
+    /* Home Page Info Block */
+    Container::make('post_meta', __('Small Info', 'skinny-ninjah'))
+        ->show_on_page('home')
+        ->add_fields([
+            Field::make('complex', 'skinny_ninjah_homepage_info_block', '')
+                ->set_layout('tabbed-horizontal')
+                ->add_fields([
+                    Field::make( 'select', 'info_block_icon', 'Select Icon' )
+                        ->add_options( array(
+                            'fa-users' => 'Users',
+                            'fa-coffee' => 'Coffee',
+                            'fa-comments-o' => 'Comments',
+                            'fa-thumbs-up' => 'Thumbs Up',
+                        ) )->set_width(30),
+                    Field::make('text', 'info_block_title', 'Number')->set_width(30),
+                    Field::make('text', 'info_block_description', 'Description')->set_width(30),
+                ])
+                ->set_header_template(
+                    '
+                <% if (info_block_description) { %>
+                    <%- info_block_description %>
+                <% } else { %>
+                    empty
+                <% } %> '
+                ),
+        ]);
+
+
     /* Skinny Ninjah Options Page */
     $basic_options_container = Container::make('theme_options', __('Skinny Ninjah Settings'))
         ->set_page_menu_position(2)

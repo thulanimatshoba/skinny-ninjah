@@ -1,4 +1,6 @@
 /* Home Page Styling */
+
+/* Header */
 .home header#masthead {
 	position: absolute;
 
@@ -7,6 +9,7 @@
 	}
 }
 
+/* Home Page Slider */
 .slider-image img {
 	width: 100%;
 }
@@ -24,6 +27,64 @@
 		top: 0;
 		bottom: 0;
 		background-color: rgba(0,0,0,0.3);
+	}
+}
+
+/* Home Page Info Block */
+.info-block {
+	background: #2f2928;
+
+	li.info-block-list {
+		.list-container:after {
+			content: "";
+			width: 30px;
+			height: 2px;
+			display: block;
+			margin: 10px auto 0;
+			background: #998675;
+		}
+		i.fa {
+			font-size: 50px;
+			&.fa-comments-o:before {
+				content: "\f0e6";
+			}
+		}
+		h4 {
+			//font-size: 30px;
+			&:after {
+				content: "+";
+			}
+		}
+	}
+}
+
+#primary.content-area {
+	width: 100%;
+	background: $color_white;
+	margin-bottom: 0;
+	@media only screen and (min-width: 640px) {
+		margin-bottom: 405px;
+	}
+}
+
+/* Footer */
+footer#colophon {
+	width: 100%;
+	position: relative;
+	z-index: 1;
+	@media only screen and (min-width: 640px) {
+		position: fixed;
+		z-index: -1;
+		bottom: 0;
+		left: 0;
+	}
+
+
+
+	footer#colophon {
+		//background: $color_main_blue;
+		//position: relative;
+		//color: $color__border-abbr;
 	}
 }
 

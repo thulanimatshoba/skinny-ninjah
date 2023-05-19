@@ -6,7 +6,7 @@
     $slider_link_2 = carbon_get_the_post_meta('skinny_ninjah_slider_link_2');
  ?>
 
-<div class="uk-position-relative" uk-slideshow="ratio: 6:3; animation: push; autoplay: true; autoplay-interval: 5000">
+<div class="uk-position-relative" uk-slideshow="ratio: 6:3; animation: fade; autoplay: true; autoplay-interval: 5000">
     <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
         <ul class="uk-slideshow-items">
         <!-- <li><video src="https://yootheme.com/site/images/media/yootheme-pro.mp4" autoplay loop playsinline uk-cover></video></li> -->
