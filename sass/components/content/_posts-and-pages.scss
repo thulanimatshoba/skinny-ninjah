@@ -79,12 +79,17 @@ footer#colophon {
 		left: 0;
 	}
 
+	.footer-top {
+		ul {
+			margin: 0;
+			list-style: none;
+			padding-left: 0;
 
-
-	footer#colophon {
-		//background: $color_main_blue;
-		//position: relative;
-		//color: $color__border-abbr;
+			li {
+				border-bottom: 1px solid #232323;
+				padding: 10px 10px 10px 0;
+			}
+		}
 	}
 }
 

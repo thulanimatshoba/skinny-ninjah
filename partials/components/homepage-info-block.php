@@ -1,5 +1,5 @@
 <?php
-    $info_blocks = carbon_get_the_post_meta('skinny_ninjah_homepage_info_block');
+    $info_blocks = carbon_get_the_post_meta('page_info_block');
 ?>
 
 <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slider="autoplay: true">

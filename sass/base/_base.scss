@@ -410,6 +410,14 @@ big {
       content: '\f17e';
     }
 
+    &[href*="strava.com"]::before {
+      content: '\f428';
+    }
+
+    &[href*="tiktok.com"]::before {
+      content: '\e07b';
+    }
+
     &:hover[href*="facebook.com"]::before {
       color: $facebook_color;
     }
@@ -421,8 +429,17 @@ big {
     &:hover[href*="instagram.com"]::before {
       color: $instagram_color;
     }
+
     &:hover[href*="youtube.com"]::before {
       color: $youtube_color;
+    }
+
+    &:hover[href*="strava.com"]::before {
+      color: $strava_color;
+    }
+
+    &:hover[href*="tiktok.com"]::before {
+      color: $tiktok_color;
     }
   }
 }

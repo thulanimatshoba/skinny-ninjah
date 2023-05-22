@@ -10,17 +10,18 @@
  */
 
 /* Homepage Slider */
+get_header();
 $homepage_slider = carbon_get_the_post_meta('skinny_ninjah_slider');
 
-get_header();
-?>
-
-<?php if ($homepage_slider) : ?>
+if ($homepage_slider) { ?>
     <div class="home-slider uk-text-center">
-        <?php get_template_part('partials/components/homepage-slider') ?>
+        <?php get_template_part('partials/components/page-slider') ?>
     </div>
-    <div class="skinny-ninjah-overlay"></div>
-<?php endif; ?>
+<?php } else { ?>
+    <div>
+        <img src="/wp-content/uploads/2023/05/slider4-1421x780.jpeg" width="100%">
+    </div>
+<?php } ?>
 
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
