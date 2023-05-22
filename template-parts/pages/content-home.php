@@ -33,7 +33,7 @@ $info_blocks = carbon_get_the_post_meta('page_info_block');
         <?php if ($info_blocks) { ?>
             <div class="info-block uk-position-relative uk-padding-large" uk-scrollspy="cls: uk-animation-scale-up; target: .uk-slider-items; delay: 300; repeat: false">
                 <div class="uk-container">
-                    <?= get_template_part('partials/components/homepage-info', 'block'); ?>
+                    <?= get_template_part('partials/components/page-info', 'block'); ?>
                 </div>
             </div>
         <?php } ?>
