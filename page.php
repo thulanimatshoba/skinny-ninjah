@@ -16,7 +16,7 @@ get_header();
 
 $page_slider = carbon_get_the_post_meta('skinny_ninjah_slider');
 $info_blocks = carbon_get_the_post_meta('page_info_block');
-
+$portfolio_blocks = carbon_get_the_post_meta('page_portfolio_block');
 
 if ($page_slider) { ?>
 	<div class="home-slider uk-text-center">
@@ -45,7 +45,15 @@ if ($page_slider) { ?>
 			?>
 		</div>
 
-		<?php if ($info_blocks) { ?>
+		<?php if ($portfolio_blocks) { ?>
+			<div id="portfolio">
+				<div class="uk-container">
+					<?php get_template_part('partials/components/page-portfolio', 'block'); ?>
+				</div>
+			</div>
+		<?php }
+
+		if ($info_blocks) { ?>
 			<div class="info-block uk-position-relative uk-padding-large" uk-scrollspy="cls: uk-animation-scale-up; target: .uk-slider-items; delay: 300; repeat: false">
 				<div class="uk-container">
 					<?= get_template_part('partials/components/page-info', 'block'); ?>

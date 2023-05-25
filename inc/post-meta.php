@@ -149,6 +149,10 @@ function skinny_ninjah_post_meta()
                 ),
         ]);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/develop
     /* Home Page Info Block */
     Container::make('post_meta', __('Small Info', 'skinny-ninjah'))
         ->where( 'post_type', '=', 'page' )
@@ -176,6 +180,39 @@ function skinny_ninjah_post_meta()
                 ),
         ]);
 
+<<<<<<< HEAD
+=======
+    /* Portfolio */
+    Container::make('post_meta', __('Portfolio', 'skinny-ninjah'))
+        ->where( 'post_type', '=', 'page' )
+        ->add_fields([
+            Field::make('text', 'section_title', 'Section Title')->set_width(50),
+            Field::make('text', 'section_description', 'Section Small Description')->set_width(50),
+            Field::make('complex', 'page_portfolio_block', '')
+                ->set_layout('tabbed-vertical')
+                ->add_fields([
+                    Field::make( 'select', 'portfolio_category', 'Portfolio Category' )
+                        ->add_options([
+                            'ecommerce' => 'E-commerce',
+                            'web-design' => 'Web Design',
+                            'web-development' => 'Web Development',
+                            'running' => 'Running',
+                        ])->set_width(20),
+                    Field::make('image', 'category_image', 'Image')->set_width(20),
+                    Field::make('text', 'category_name', 'Title')->set_width(20),
+                    Field::make('text', 'portfolio_description', 'Small Description')->set_width(20),
+                ])
+                ->set_header_template(
+                    '
+                <% if (category_name) { %>
+                    <%- category_name %>
+                <% } else { %>
+                    empty
+                <% } %> '
+                ),
+        ]);
+
+>>>>>>> origin/develop
 
     /* Skinny Ninjah Options Page */
     $basic_options_container = Container::make('theme_options', __('Stashed Settings'))

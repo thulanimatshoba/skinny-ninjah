@@ -931,69 +931,52 @@ big {
 	background-color: rgba(0, 0, 0, 0.3);
 }
 
-/* Home Page Info Block */
-.info-block {
-	background: #2f2928;
-}
-
-.info-block li.info-block-list .list-container:after {
-	content: "";
-	width: 30px;
-	height: 2px;
-	display: block;
-	margin: 10px auto 0;
-	background: #998675;
-}
-
-.info-block li.info-block-list i.fa {
-	font-size: 50px;
-}
-
-.info-block li.info-block-list i.fa.fa-comments-o:before {
-	content: "\f0e6";
-}
-
-.info-block li.info-block-list h4:after {
-	content: "+";
-}
-
-#primary.content-area {
-	width: 100%;
-	background: #fff;
-	margin-bottom: 0;
-}
-
-@media only screen and (min-width: 640px) {
-	#primary.content-area {
-		margin-bottom: 405px;
-	}
-}
-
-/* Footer */
-footer#colophon {
-	width: 100%;
-	position: relative;
-	z-index: 1;
-}
-
-@media only screen and (min-width: 640px) {
-	footer#colophon {
-		position: fixed;
-		z-index: -1;
-		bottom: 0;
-		left: 0;
-	}
-}
-
-footer#colophon .footer-top ul {
-	margin: 0;
-	list-style: none;
+/* Portfolio */
+#portfolio .category-block {
 	padding-left: 0;
+	margin-top: 0 !important;
 }
 
-footer#colophon .footer-top ul li {
-	border-bottom: 1px solid #232323;
-	padding: 10px 10px 10px 0;
+#portfolio .category-block .portfolio-block {
+	padding-left: 0;
+	margin-top: 0 !important;
+}
+
+#portfolio .category-block .portfolio-block img {
+	transition: all 400ms ease-in-out;
+}
+
+#portfolio .category-block .portfolio-block .portfolio-content {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	font-weight: 700;
+	color: #fff;
+	z-index: 1;
+	opacity: 0;
+	transition: all 400ms ease-in-out;
+}
+
+#portfolio .category-block .portfolio-block .portfolio-content h5 {
+	color: #fff;
+}
+
+#portfolio .category-block .portfolio-block:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+#portfolio .category-block .portfolio-block:hover > img {
+	transform: scale(1.1);
+}
+
+#portfolio .category-block .portfolio-block:hover > .portfolio-content {
+	opacity: 1;
 }
 
 .sticky {

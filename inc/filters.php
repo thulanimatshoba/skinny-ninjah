@@ -39,6 +39,7 @@ function skinny_ninjah_setup() {
      */
     add_image_size('featured-thumb', 600, 320, ['center', 'center']);
     add_image_size('featured-square', 300, 300, ['center', 'center']);
+    add_image_size('portfolio-square', 480, 365, ['center', 'center']);
     add_image_size('featured-big', 1600, 780, ['center', 'center']);
 
     // This theme uses wp_nav_menu() in one location.
