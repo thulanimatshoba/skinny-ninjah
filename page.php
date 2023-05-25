@@ -46,7 +46,7 @@ if ($page_slider) { ?>
 		?>
 
 		<?php if ($portfolio_blocks) { ?>
-			<div class="portfolio">
+			<div id="portfolio">
 				<div class="uk-container">
 					<?php get_template_part('partials/components/page-portfolio', 'block'); ?>
 				</div>
