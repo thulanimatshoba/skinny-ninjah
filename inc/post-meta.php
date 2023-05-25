@@ -1,6 +1,5 @@
 <?php
 
-use Carbon_Fields\Block;
 use Carbon_Fields\Carbon_Fields;
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
@@ -8,14 +7,44 @@ use Carbon_Fields\Field;
 add_action('carbon_fields_register_fields', 'skinny_ninjah_post_meta');
 function skinny_ninjah_post_meta()
 {
-    /* Home Page Team */
-    Container::make('post_meta', __('Home Page Slider', 'skinny-ninjah'))
-        ->show_on_page('home')
+    /* Page Slider */
+    Container::make('post_meta', __('Page Slider', 'skinny-ninjah'))
+        ->where( 'post_type', '=', 'page' )
         ->add_fields([
             Field::make('complex', 'skinny_ninjah_slider', 'Add your slides below.')
                 ->set_layout('tabbed-vertical')
                 ->add_fields([
-                    Field::make('image', 'skinny_ninjah_slider_image', 'Slider Image'),
+                    Field::make ( 'select' , 'media_type' , 'Slider Image or Video?' )
+                        ->set_width(30)
+                        ->add_options ([
+                            'image' => 'Image' ,
+                            'video' => 'Video' ,
+                        ]),
+
+                    Field::make ( 'image' , 'slider_image' , 'Slider Image' )
+                        ->set_width(30)
+                        ->set_conditional_logic ([
+                            'relation' => 'AND' ,
+                            [
+                                'field' => 'media_type' ,
+                                'value' => 'image' ,
+                                'compare' => '=' ,
+                            ]
+                        ]),
+
+                    Field::make ( 'file' , 'slider_video' , 'Slider Video' )
+                        ->set_width(30)
+                        ->set_type('video')
+                        ->set_value_type('url')
+                        ->set_conditional_logic ([
+                            'relation' => 'AND' ,
+                            [
+                                'field' => 'media_type' ,
+                                'value' => 'video' ,
+                                'compare' => '=' ,
+                            ]
+                        ]),
+
                     Field::make( 'select', 'show_slider_heading', 'Show Heading' )
                         ->add_options(
                             [
@@ -23,11 +52,25 @@ function skinny_ninjah_post_meta()
                                 'no' => 'No',
                             ]
                         ),
-                    Field::make('text', 'skinny_ninjah_slider_name', 'Heading')
-                        ->set_width(30)
+                    Field::make('text', 'slider_name', 'Heading')
+                        ->set_width(80)
                         ->set_attribute('placeholder', 'Slider Heading')
-                        ->set_default_value( 'Slider Heading Lorem Ipsum' )
+                        ->set_default_value( 'Slider Heading' )
                         ->set_help_text( 'Enter your slider heading' )
+                        ->set_conditional_logic(
+                            [
+                                'relation' => 'AND',
+                                [
+                                    'field' => 'show_slider_heading',
+                                    'value' => 'yes',
+                                    'compare' => '=',
+                                ]
+                            ]
+                        ),
+
+                    Field::make( 'color', 'slider_title_color', 'Heading Color' )
+                        ->set_alpha_enabled()
+                        ->set_width(20)
                         ->set_conditional_logic(
                             [
                                 'relation' => 'AND',
@@ -46,9 +89,10 @@ function skinny_ninjah_post_meta()
                                 'no' => 'No',
                             ]
                         ),
-                    Field::make('textarea', 'skinny_ninjah_slider_description', 'Description')
+                    Field::make('textarea', 'slider_description', 'Description')
+                        ->set_width(80)
                         ->set_attribute('placeholder', 'Slider Description')
-                        ->set_default_value( 'Slider Description Lorem Ipsum dolor sit amet' )
+                        ->set_default_value( 'Slider Description' )
                         ->set_help_text( 'Enter your slider description' )
                         ->set_conditional_logic(
                             [
@@ -61,46 +105,51 @@ function skinny_ninjah_post_meta()
                             ]
                         ),
 
-                    Field::make('text', 'skinny_ninjah_slider_link_label_1', 'Slider Link Label One')
+                    Field::make( 'color', 'slider_desc_color', 'Description Color' )
+                        ->set_alpha_enabled()
+                        ->set_width(20)
+                        ->set_conditional_logic(
+                            [
+                                'relation' => 'AND',
+                                [
+                                    'field' => 'show_slider_description',
+                                    'value' => 'yes',
+                                    'compare' => '=',
+                                ]
+                            ]
+                        ),
+
+                    Field::make('text', 'slider_link_label_1', 'Slider Link Label One')
                         ->set_width(20)
                         ->set_attribute('placeholder', 'Link label')
                         ->set_help_text( 'Enter your button link label' ),
 
-                    Field::make('text', 'skinny_ninjah_slider_link_1', 'Slider Link One')
+                    Field::make('text', 'slider_link_1', 'Slider Link One')
                         ->set_width(20)
                         ->set_attribute('placeholder', 'https//')
                         ->set_help_text( 'Enter your button link url' ),
 
-                    Field::make('text', 'skinny_ninjah_slider_link_label_2', 'Slider Link Label Two')
+                    Field::make('text', 'slider_link_label_2', 'Slider Link Label Two')
                         ->set_width(20)
                         ->set_attribute('placeholder', 'Link label')
                         ->set_help_text( 'Enter your button link label' ),
 
-                    Field::make('text', 'skinny_ninjah_slider_link_2', 'Slider Link Two')
+                    Field::make('text', 'slider_link_2', 'Slider Link Two')
                         ->set_width(20)
                         ->set_attribute('placeholder', 'https//')
                         ->set_help_text( 'Enter your button link url' ),
-
-                    Field::make( 'color', 'skinny_ninjah_slider_title_color', 'Heading Color' )
-                        ->set_alpha_enabled()
-                        ->set_width(30),
-
-                    Field::make( 'color', 'skinny_ninjah_slider_desc_color', 'Description Color' )
-                        ->set_alpha_enabled()
-                        ->set_width(30),
                 ])
                 ->set_header_template(
                     '
-                <% if (skinny_ninjah_slider_name) { %>
-                    <%- skinny_ninjah_slider_name %>
+                <% if (slider_name) { %>
+                    <%- slider_name %>
                 <% } else { %>
                     empty
                 <% } %> '
                 ),
         ]);
 
-
-    /* Home Page Info Block */
+    /* Page Info Block */
     Container::make('post_meta', __('Small Info', 'skinny-ninjah'))
         ->where( 'post_type', '=', 'page' )
         ->add_fields([
@@ -159,20 +208,20 @@ function skinny_ninjah_post_meta()
 
 
     /* Skinny Ninjah Options Page */
-    $basic_options_container = Container::make('theme_options', __('Skinny Ninjah Settings'))
+    $basic_options_container = Container::make('theme_options', __('Stashed Settings'))
         ->set_page_menu_position(2)
         ->set_icon('dashicons-image-filter')
         ->add_tab( 'Social', [
-            Field::make( 'complex', 'skinny_ninjah_social_links', 'Social Links' )
+            Field::make( 'complex', 'social_links', 'Social Links' )
                 ->set_layout('tabbed-vertical')
                 ->add_fields( [
-                    Field::make( 'text', 'skinny_ninjah_social_label', 'Social Label' )
+                    Field::make( 'text', 'social_label', 'Social Label' )
                         ->set_attribute('placeholder', 'Facebook')
                         ->set_help_text( 'Enter your social media label' )
                         ->set_width( 50 )
                         ->set_required(),
 
-                    Field::make( 'text', 'skinny_ninjah_social_url', 'Social URL' )
+                    Field::make( 'text', 'social_url', 'Social URL' )
                         ->set_attribute('placeholder', 'https://facebook.com')
                         ->set_help_text( 'Enter your social media link url' )
                         ->set_width( 50 )
@@ -180,8 +229,8 @@ function skinny_ninjah_post_meta()
                 ] )
                 ->set_header_template(
                     '
-                <% if (skinny_ninjah_social_label) { %>
-                    <%- skinny_ninjah_social_label %>
+                <% if (social_label) { %>
+                    <%- social_label %>
                 <% } else { %>
                     empty
                 <% } %> '
@@ -189,18 +238,18 @@ function skinny_ninjah_post_meta()
         ] )
 
         ->add_tab(__('Google Analytics'), [
-            Field::make('text', 'skinny_ninjah_gtm_code', __('Google Tag Manager Code'))
+            Field::make('text', 'gtm_code', __('Google Tag Manager Code'))
                 ->set_attribute('placeholder', 'GTM-XXX'),
-            Field::make('text', 'skinny_ninjah_ua_code', __('Google Universal Analytics Tracking ID'))
+            Field::make('text', 'ua_code', __('Google Universal Analytics Tracking ID'))
                 ->set_attribute('placeholder', 'UA-XXX'),
         ])
         ->add_tab(__('ReCaptcha'), [
-            Field::make('text', 'skinny_ninjah_recaptcha_client_key', __('ReCaptcha Site Key')),
-            Field::make('text', 'skinny_ninjah_recaptcha_server_key', __('ReCaptcha Secret Key')),
+            Field::make('text', 'recaptcha_client_key', __('ReCaptcha Site Key')),
+            Field::make('text', 'recaptcha_server_key', __('ReCaptcha Secret Key')),
         ])
         ->add_tab(__('Scripts'), [
-            Field::make('header_scripts', 'skinny_ninjah_header_script', __('Header Script')),
-            Field::make('footer_scripts', 'skinny_ninjah_footer_script', __('Footer Script')),
+            Field::make('header_scripts', 'header_script', __('Header Script')),
+            Field::make('footer_scripts', 'footer_script', __('Footer Script')),
         ]);
 
 
@@ -208,16 +257,16 @@ function skinny_ninjah_post_meta()
     Container::make('theme_options', __('Something Else'))
         ->set_page_parent($basic_options_container) // reference to a top level container
         ->add_tab( 'Something', [
-            Field::make( 'complex', 'skinny_ninjah_social_links', 'Social Links' )
+            Field::make( 'complex', 'social_links', 'Social Links' )
                 ->set_layout('tabbed-vertical')
                 ->add_fields( [
-                    Field::make( 'text', 'skinny_ninjah_social_label', 'Social Label' )
+                    Field::make( 'text', 'social_label', 'Social Label' )
                         ->set_attribute('placeholder', 'Facebook')
                         ->set_help_text( 'Enter your social media label' )
                         ->set_width( 50 ) // condense layout so field takes only 50% of the available width
                         ->set_required(),
 
-                    Field::make( 'text', 'skinny_ninjah_social_url', 'Social URL' )
+                    Field::make( 'text', 'social_url', 'Social URL' )
                         ->set_attribute('placeholder', 'https://facebook.com')
                         ->set_help_text( 'Enter your social media link url' )
                         ->set_width( 50 )
@@ -225,8 +274,8 @@ function skinny_ninjah_post_meta()
                 ] )
                 ->set_header_template(
                     '
-                <% if (skinny_ninjah_social_label) { %>
-                    <%- skinny_ninjah_social_label %>
+                <% if (social_label) { %>
+                    <%- social_label %>
                 <% } else { %>
                     empty
                 <% } %> '

@@ -6,12 +6,14 @@
  *
  * @package Skinny_Ninjah
  */
+
+$info_blocks = carbon_get_the_post_meta('page_info_block');
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('home-section'); ?>>
     <header class="entry-header">
         <div class="uk-container">
-            <h1 itemprop="headline" title="<?php the_title(); ?>" class="entry-title uk-text-center uk-padding-small"><?php the_title(); ?></h1>
+            <h1 itemprop="headline" title="<?php the_title(); ?>" class="entry-title uk-text-center uk-padding-small uk-hidden"><?php the_title(); ?></h1>
         </div>
     </header><!-- .entry-header -->
 
@@ -27,6 +29,15 @@
             ]);
             ?>
         </div>
+
+        <?php if ($info_blocks) { ?>
+            <div class="info-block uk-position-relative uk-padding-large" uk-scrollspy="cls: uk-animation-scale-up; target: .uk-slider-items; delay: 300; repeat: false">
+                <div class="uk-container">
+                    <?= get_template_part('partials/components/page-info', 'block'); ?>
+                </div>
+            </div>
+        <?php } ?>
+
     </div><!-- .entry-content -->
 
     <?php if (get_edit_post_link()) : ?>

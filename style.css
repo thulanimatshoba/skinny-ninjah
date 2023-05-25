@@ -792,6 +792,14 @@ big {
 	content: '\f17e';
 }
 
+.social-links a[href*="strava.com"]::before {
+	content: '\f428';
+}
+
+.social-links a[href*="tiktok.com"]::before {
+	content: '\e07b';
+}
+
 .social-links a:hover[href*="facebook.com"]::before {
 	color: #3b5998;
 }
@@ -806,6 +814,14 @@ big {
 
 .social-links a:hover[href*="youtube.com"]::before {
 	color: #c4302b;
+}
+
+.social-links a:hover[href*="strava.com"]::before {
+	color: #FC4C02;
+}
+
+.social-links a:hover[href*="tiktok.com"]::before {
+	color: #69C9D0;
 }
 
 /*--------------------------------------------------------------
@@ -887,6 +903,7 @@ big {
 /* Posts and pages
 --------------------------------------------- */
 /* Home Page Styling */
+/* Header */
 .home header#masthead {
 	position: absolute;
 }
@@ -895,6 +912,7 @@ big {
 	background: black;
 }
 
+/* Home Page Slider */
 .slider-image img {
 	width: 100%;
 }
