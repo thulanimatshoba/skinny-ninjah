@@ -149,11 +149,7 @@ function skinny_ninjah_post_meta()
                 ),
         ]);
 
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/develop
-    /* Home Page Info Block */
+    /* Page Info Block */
     Container::make('post_meta', __('Small Info', 'skinny-ninjah'))
         ->where( 'post_type', '=', 'page' )
         ->add_fields([
@@ -180,8 +176,6 @@ function skinny_ninjah_post_meta()
                 ),
         ]);
 
-<<<<<<< HEAD
-=======
     /* Portfolio */
     Container::make('post_meta', __('Portfolio', 'skinny-ninjah'))
         ->where( 'post_type', '=', 'page' )
@@ -212,7 +206,6 @@ function skinny_ninjah_post_meta()
                 ),
         ]);
 
->>>>>>> origin/develop
 
     /* Skinny Ninjah Options Page */
     $basic_options_container = Container::make('theme_options', __('Stashed Settings'))
