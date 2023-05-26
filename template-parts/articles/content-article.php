@@ -113,7 +113,7 @@ require_once 'article-info.php';
             <hr>
             <?php skinny_ninjah_entry_footer(); ?>
             <hr>
-            <?php //skinny_ninjah_related_posts(); ?>
+            <?php skinny_ninjah_related_posts(); ?>
         </div>
     </footer><!-- .entry-footer -->
     <hr>

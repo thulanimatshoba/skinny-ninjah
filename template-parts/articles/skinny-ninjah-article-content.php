@@ -82,6 +82,10 @@ require_once 'article-info.php';
 
                                     </div><!-- .entry-meta -->
                                 <?php endif; ?>
+
+                                <h4 class="article-excerpt">
+                                    <?= strip_tags(get_the_excerpt(), '<p>'); ?>
+                                </h4>
                                 <?php
                                 for ($i = 0; $i < $count; $i++) {
                                     echo $content[ $i ];
@@ -118,7 +122,7 @@ require_once 'article-info.php';
             <hr>
             <?php skinny_ninjah_entry_footer(); ?>
             <hr>
-            <?php //skinny_ninjah_related_posts(); ?>
+            <?php skinny_ninjah_related_posts(); ?>
         </div>
     </footer><!-- .entry-footer -->
     <hr>
