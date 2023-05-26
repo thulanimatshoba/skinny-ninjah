@@ -1,15 +1,17 @@
-/* Home Page Styling */
-
 /* Header */
-.home header#masthead {
-	position: absolute;
-
-	&.uk-sticky-below {
-		background: black;
+.home {
+	header#masthead {
+		position: absolute;
 	}
 }
 
-/* Home Page Slider */
+header#masthead {
+	&.uk-sticky-below {
+		background: $color_bg_gradient;
+	}
+}
+
+/* Page Slider */
 .slider-image img {
 	width: 100%;
 }
@@ -49,13 +51,13 @@
 				width: 100%;
 				top: 50%;
 				font-weight: 700;
-				color: #fff;
+				color: $color_white;
 				z-index: 1;
 				opacity: 0;
 				transition: all 400ms ease-in-out;
 
 				h5 {
-					color: #fff;
+					color: $color_white;
 				}
 			}
 
@@ -82,7 +84,81 @@
 	}
 }
 
+/* Page Info Block */
+.info-block {
+	background: $color_bg_gradient;
 
+	li.info-block-list {
+		.list-container:after {
+			content: "";
+			width: 30px;
+			height: 2px;
+			display: block;
+			margin: 10px auto 0;
+			background: #998675;
+		}
+		i.fa {
+			font-size: 50px;
+			color: $color_grey;
+			&.fa-comments-o:before {
+				content: "\f0e6";
+			}
+		}
+		h4 {
+			//font-size: 30px;
+			&:after {
+				content: "+";
+			}
+		}
+	}
+}
+
+#primary.site-main {
+	width: 100%;
+	background: $color_white;
+	margin-bottom: 0;
+	@media only screen and (min-width: 640px) {
+		margin-bottom: 390px;
+	}
+}
+
+
+.home-page-content-list {
+	li {
+		list-style: none;
+		position: relative;
+		padding-left: 30px;
+		line-height: 35px;
+
+		&:before {
+			content: "\f105";
+			font-family: 'FontAwesome';
+			width: 23px;
+			height: 23px;
+			display: inline-block;
+			background: $color_bg_gradient;
+			color: white;
+			text-align: center;
+			border-radius: 100%;
+			line-height: 23px;
+			text-indent: 1px;
+			font-size: 12px;
+			position: absolute;
+			left: 0;
+			top: 5px;
+		}
+	}
+
+}
+
+/* Articles */
+.breadcrumbs {
+	background: -webkit-linear-gradient(left, #362f2d, #534741);
+
+	span {
+		color: $color_white;
+	}
+}
 
 .sticky {
 	display: block;
@@ -108,13 +184,40 @@
 	margin: 0 0 1.5em;
 }
 
-
+figure {
+	margin-bottom: 0 !important;
+}
 
 /* Footer */
 footer#colophon {
-    background: $color_footer_bg;
+	background: $color_footer_bg;
 	color: $color__border-abbr;
+	width: 100%;
+	position: relative;
+	z-index: 1;
+	@media only screen and (min-width: 640px) {
+		position: fixed;
+		z-index: -1;
+		bottom: 0;
+		left: 0;
+	}
 
+	.footer-top {
+		ul {
+			margin: 0;
+			list-style: none;
+			padding-left: 0;
+
+			li {
+				border-bottom: 1px solid #232323;
+				padding: 10px 10px 10px 0;
+
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+		}
+	}
 	.site-info {
 		background-color: transparent;
 		background-image: linear-gradient(275deg, $color_footer_bg 39%, $color_red 100%);

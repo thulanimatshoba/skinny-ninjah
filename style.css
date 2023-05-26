@@ -5,31 +5,12 @@ Author: Thulani Matshoba
 Author URI: http://thulanimatshoba.co.za
 Description: This is a Wordpress theme called Skinny Ninjah... fully customisable
 Version: 1.0.0
-Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
-License URI: LICENSE
 Text Domain: skinny-ninjah
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned.
-
-Skinny Ninjah is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
---------------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;800&display=swap");
-/*--------------------------------------------------------------
-# Generic
---------------------------------------------------------------*/
-/* Normalize
---------------------------------------------- */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
 	 ========================================================================== */
@@ -339,9 +320,6 @@ template {
 	display: none;
 }
 
-/*--------------------------------------------------------------
-# Base
---------------------------------------------------------------*/
 /* Inherit box-sizing to more easily change it's value on a component level.
 @link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 *,
@@ -356,10 +334,6 @@ html {
 
 a {
 	color: #4169e1;
-}
-
-a:visited {
-	color: #800080;
 }
 
 a:hover, a:focus, a:active {
@@ -827,9 +801,6 @@ big {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Components
---------------------------------------------------------------*/
 /* Navigation
 --------------------------------------------- */
 .main-navigation {
@@ -902,17 +873,16 @@ big {
 
 /* Posts and pages
 --------------------------------------------- */
-/* Home Page Styling */
 /* Header */
 .home header#masthead {
 	position: absolute;
 }
 
-.home header#masthead.uk-sticky-below {
-	background: black;
+header#masthead.uk-sticky-below {
+	background: -webkit-linear-gradient(left, #362f2d, #534741);
 }
 
-/* Home Page Slider */
+/* Page Slider */
 .slider-image img {
 	width: 100%;
 }
@@ -979,6 +949,79 @@ big {
 	opacity: 1;
 }
 
+/* Page Info Block */
+.info-block {
+	background: -webkit-linear-gradient(left, #362f2d, #534741);
+}
+
+.info-block li.info-block-list .list-container:after {
+	content: "";
+	width: 30px;
+	height: 2px;
+	display: block;
+	margin: 10px auto 0;
+	background: #998675;
+}
+
+.info-block li.info-block-list i.fa {
+	font-size: 50px;
+	color: #ccc;
+}
+
+.info-block li.info-block-list i.fa.fa-comments-o:before {
+	content: "\f0e6";
+}
+
+.info-block li.info-block-list h4:after {
+	content: "+";
+}
+
+#primary.site-main {
+	width: 100%;
+	background: #fff;
+	margin-bottom: 0;
+}
+
+@media only screen and (min-width: 640px) {
+	#primary.site-main {
+		margin-bottom: 390px;
+	}
+}
+
+.home-page-content-list li {
+	list-style: none;
+	position: relative;
+	padding-left: 30px;
+	line-height: 35px;
+}
+
+.home-page-content-list li:before {
+	content: "\f105";
+	font-family: 'FontAwesome';
+	width: 23px;
+	height: 23px;
+	display: inline-block;
+	background: -webkit-linear-gradient(left, #362f2d, #534741);
+	color: white;
+	text-align: center;
+	border-radius: 100%;
+	line-height: 23px;
+	text-indent: 1px;
+	font-size: 12px;
+	position: absolute;
+	left: 0;
+	top: 5px;
+}
+
+/* Articles */
+.breadcrumbs {
+	background: -webkit-linear-gradient(left, #362f2d, #534741);
+}
+
+.breadcrumbs span {
+	color: #fff;
+}
+
 .sticky {
 	display: block;
 }
@@ -1003,10 +1046,41 @@ big {
 	margin: 0 0 1.5em;
 }
 
+figure {
+	margin-bottom: 0 !important;
+}
+
 /* Footer */
 footer#colophon {
 	background: #191919;
 	color: #666;
+	width: 100%;
+	position: relative;
+	z-index: 1;
+}
+
+@media only screen and (min-width: 640px) {
+	footer#colophon {
+		position: fixed;
+		z-index: -1;
+		bottom: 0;
+		left: 0;
+	}
+}
+
+footer#colophon .footer-top ul {
+	margin: 0;
+	list-style: none;
+	padding-left: 0;
+}
+
+footer#colophon .footer-top ul li {
+	border-bottom: 1px solid #232323;
+	padding: 10px 10px 10px 0;
+}
+
+footer#colophon .footer-top ul li:last-child {
+	border-bottom: none;
 }
 
 footer#colophon .site-info {
@@ -1024,11 +1098,6 @@ footer#colophon .site-info {
 	display: block;
 }
 
-/*--------------------------------------------------------------
-# Plugins
---------------------------------------------------------------*/
-/* Jetpack infinite scroll
---------------------------------------------- */
 /* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
