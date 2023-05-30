@@ -26,38 +26,38 @@ if ( post_password_required() ) {
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
+		<h3 class="comments-title">
 			<?php
 			$skinny_ninjah_comment_count = get_comments_number();
 			if ( '1' === $skinny_ninjah_comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'skinny-ninjah' ),
+					esc_html__( 'One comment on: %1$s', 'skinny-ninjah' ),
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			} else {
-				printf( 
+				printf(
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $skinny_ninjah_comment_count, 'comments title', 'skinny-ninjah' ) ),
+					esc_html( _nx( '%1$s Comment on: %2$s', '%1$s Comments on: %2$s', $skinny_ninjah_comment_count, 'comments title', 'skinny-ninjah' ) ),
 					number_format_i18n( $skinny_ninjah_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			}
 			?>
-		</h2><!-- .comments-title -->
+		</h3><!-- .comments-title -->
 
 		<?php the_comments_navigation(); ?>
 
-		<ol class="comment-list">
+		<ul class="comment-list">
 			<?php
 			wp_list_comments(
-				array(
-					'style'      => 'ol',
+				[
+					'style'      => 'ul',
 					'short_ping' => true,
-				)
+				]
 			);
 			?>
-		</ol><!-- .comment-list -->
+		</ul><!-- .comment-list -->
 
 		<?php
 		the_comments_navigation();

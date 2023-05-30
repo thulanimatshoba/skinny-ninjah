@@ -57,7 +57,7 @@ require_once 'article-info.php';
                     skinny_ninjah_posted_by();
                     skinny_ninjah_posted_on();
                     ?>
-                    <span class="post-comments uk-text-muted uk-text-small">
+                    <span class="post-comments uk-text-muted uk-text-small uk-float-right">
                         <a href="#comments" class="uk-text-muted">
                             <i class="fa fa-comments">
                                 <span>

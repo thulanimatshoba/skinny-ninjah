@@ -22,25 +22,23 @@ if ($page_slider) { ?>
 	<div class="home-slider uk-text-center">
 		<?php get_template_part('partials/components/page-slider') ?>
 	</div>
-<?php } else { ?>
-	<div>
-		<img src="<?= $placeholder; ?>" width="100%">
-	</div>
 <?php } ?>
 
 <main id="primary" class="site-main">
-	<div class="uk-container">
-		<?php
+	<div class="breadcrumbs">
+		<div class="uk-container uk-padding-small">
+			<?php if ( function_exists('yoast_breadcrumb') ) {
+				yoast_breadcrumb('<p id="breadcrumbs" class="">','</p>');
+			} ?>
+		</div>
+	</div>
+
+	<?php
 		while ( have_posts() ) :
 			the_post();
 			get_template_part( 'template-parts/content', 'page' );
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
 		endwhile; // End of the loop.
-		?>
-	</div>
+	?>
 
 	<?php if ($portfolio_blocks) { ?>
 		<div id="portfolio">

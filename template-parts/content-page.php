@@ -9,6 +9,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div class="uk-container">
 	<header class="entry-header">
         <div class="uk-container">
 		    <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
@@ -52,4 +53,5 @@
 			?>
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
+	</div>
 </article><!-- #post-<?php the_ID(); ?> -->

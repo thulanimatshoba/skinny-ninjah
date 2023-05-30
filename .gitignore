@@ -18,5 +18,6 @@ bower.json
 component.json
 
 .DS_Store
+.idea
 
 assets/**/*.map

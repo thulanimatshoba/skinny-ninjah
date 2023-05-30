@@ -502,7 +502,7 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: "Raleway", sans-serif;
+	font-family: "Raleway", sans-serif !important;
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -876,10 +876,18 @@ big {
 /* Header */
 .home header#masthead {
 	position: absolute;
+	border-bottom: none;
+}
+
+header#masthead {
+	z-index: 999;
+	border-bottom: 1px solid #e9e9e9;
 }
 
 header#masthead.uk-sticky-below {
 	background: -webkit-linear-gradient(left, #362f2d, #534741);
+	border-bottom: none;
+	box-shadow: 1px 2px 4px #00000042;
 }
 
 /* Page Slider */
@@ -1014,6 +1022,20 @@ header#masthead.uk-sticky-below {
 }
 
 /* Articles */
+.single .entry-meta {
+	border-bottom: 1px solid #ccc;
+}
+
+.single #comments ul {
+	list-style: none;
+}
+
+.single #comments ul li ul li {
+	border-left: 2px solid #ccc;
+	margin-bottom: 10px;
+	padding-left: 15px;
+}
+
 .breadcrumbs {
 	background: -webkit-linear-gradient(left, #362f2d, #534741);
 }

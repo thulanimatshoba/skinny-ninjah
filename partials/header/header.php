@@ -1,4 +1,4 @@
-<header id="masthead" class="uk-width-1-1 uk-position-z-index site-header" uk-sticky="top: 100; animation: uk-animation-scale-up; bottom: #colophon">
+<header id="masthead" class="uk-width-1-1 site-header" uk-sticky="top: 100; animation: uk-animation-scale-up; bottom: #colophon">
     <div class="uk-container uk-navbar">
         <div class="site-branding uk-navbar-left">
             <?php get_template_part('partials/header/logo'); ?>

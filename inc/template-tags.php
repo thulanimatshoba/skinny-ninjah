@@ -20,9 +20,9 @@ if ( ! function_exists( 'skinny_ninjah_posted_on' ) ) :
 		$time_string = sprintf(
 			$time_string,
 			esc_attr( get_the_date( DATE_W3C ) ),
-			esc_html( get_the_date() ),
+			esc_html( get_the_date('d. M. Y') ),
 			esc_attr( get_the_modified_date( DATE_W3C ) ),
-			esc_html( get_the_modified_date() )
+			esc_html( get_the_modified_date('d. M. Y') )
 		);
 
 		$posted_on = sprintf(
@@ -80,11 +80,11 @@ if ( ! function_exists( 'skinny_ninjah_entry_footer' ) ) :
 					wp_kses(
 						/* translators: %s: post title */
 						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'skinny-ninjah' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
+						[
+							'span' => [
+								'class' => [],
+							],
+						]
 					),
 					wp_kses_post( get_the_title() )
 				)
@@ -97,11 +97,11 @@ if ( ! function_exists( 'skinny_ninjah_entry_footer' ) ) :
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
 					__( 'Edit <span class="screen-reader-text">%s</span>', 'skinny-ninjah' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
+					[
+						'span' => [
+							'class' => [],
+						],
+					]
 				),
 				wp_kses_post( get_the_title() )
 			),
@@ -136,13 +136,13 @@ if ( ! function_exists( 'skinny_ninjah_post_thumbnail' ) ) :
 				<?php
 					the_post_thumbnail(
 						'post-thumbnail',
-						array(
+						[
 							'alt' => the_title_attribute(
-								array(
+								[
 									'echo' => false,
-								)
+								]
 							),
-						)
+						]
 					);
 				?>
 			</a>
