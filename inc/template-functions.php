@@ -134,3 +134,11 @@ function skinny_ninjah_related_posts( array $args = [] ): void
 
     wp_reset_postdata();
 }
+
+add_filter('comment_form_default_fields', 'remove_website_field_on_comments');
+function remove_website_field_on_comments( $fields )
+{
+    if( isset( $fields['url'] ) )
+        unset( $fields['url']);
+    return $fields;
+}

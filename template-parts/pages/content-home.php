@@ -8,6 +8,7 @@
  */
 
 $info_blocks = carbon_get_the_post_meta('page_info_block');
+$our_clients = carbon_get_the_post_meta('our_clients');
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('home-section'); ?>>
@@ -37,6 +38,14 @@ $info_blocks = carbon_get_the_post_meta('page_info_block');
                 </div>
             </div>
         <?php } ?>
+
+        <?php if ($our_clients) : ?>
+            <div class="footer-logos">
+                <div class="uk-container uk-padding">
+                    <?php get_template_part('partials/components/page-our-clients', 'block'); ?>
+                </div>
+            </div>
+        <?php endif; ?>
 
     </div><!-- .entry-content -->
 

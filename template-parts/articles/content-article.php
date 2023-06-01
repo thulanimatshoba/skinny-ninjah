@@ -91,10 +91,10 @@ require_once 'article-info.php';
                 if ( strpos( $content[ $i ], '<p>') !== false ) {
                     echo "</p>";
                 }
-                if ( $i == 3 ) {
-                    // insert this after the 4th paragraph video after the 4th para
+                if ( $i == 2 ) {
+                    // insert this after the 3rd paragraph video after the 4th para
                     echo '<!--Placeholder for 4th paragraph video -->';
-                    echo '<div id="fourth-par-video" style="position: relative; display: block; max-width: 100%;"><h3>You Know the vibes</h3></div>';
+                    echo '<div id="fourth-par-video" style="position: relative; display: block; max-width: 100%;">"' . ( $is_sponsor ) ? '<div class="sponsored uk-text-center">sponsored</div>' : '' . '<h3>You Know the vibes</h3></div>';
                 }
             }
 

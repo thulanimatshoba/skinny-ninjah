@@ -165,6 +165,10 @@ textarea {
   line-height: $font__line-height-body;
 }
 
+.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, h1, h2, h3, h4, h5, h6 {
+  font-family: $font__main;
+}
+
 p {
   margin-bottom: 1.5em;
 }
@@ -283,20 +287,16 @@ big {
 }
 
 .alignleft {
-
   /*rtl:ignore*/
   float: left;
-
   /*rtl:ignore*/
   margin-right: 1.5em;
   margin-bottom: 1.5em;
 }
 
 .alignright {
-
   /*rtl:ignore*/
   float: right;
-
   /*rtl:ignore*/
   margin-left: 1.5em;
   margin-bottom: 1.5em;
@@ -304,9 +304,7 @@ big {
 
 .aligncenter {
   clear: both;
-
   @include center-block;
-
   margin-bottom: 1.5em;
 }
 

@@ -176,6 +176,27 @@ function skinny_ninjah_post_meta()
                 ),
         ]);
 
+    /* Page Our Clients */
+    Container::make('post_meta', __('Our Clients', 'skinny-ninjah'))
+        ->where( 'post_type', '=', 'page' )
+        ->add_fields([
+            Field::make('text', 'our_client_section_title'),
+            Field::make('complex', 'our_clients', '')
+                ->set_layout('tabbed-horizontal')
+                ->add_fields([
+                    Field::make('text', 'client_name', 'Client Name')->set_width(30),
+                    Field::make('image', 'client_logo', 'Client Logo')->set_width(30),
+                ])
+                ->set_header_template(
+                    '
+                <% if (client_name) { %>
+                    <%- client_name %>
+                <% } else { %>
+                    empty
+                <% } %> '
+                ),
+        ]);
+
     /* Portfolio */
     Container::make('post_meta', __('Portfolio', 'skinny-ninjah'))
         ->where( 'post_type', '=', 'page' )

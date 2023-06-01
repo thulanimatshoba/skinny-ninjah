@@ -11,11 +11,8 @@
 get_header();
 ?>
     <div class="content-area skinny-ninjah-article">
-        <div class="breadcrumbs">
-            <div class="uk-container uk-padding-small">
-                <?php get_template_part( 'partials/components/breadcrumbs' ); ?>
-            </div>
-        </div>
+        <?php get_template_part( 'partials/components/breadcrumbs' ); ?>
+           
         <main id="primary" class="site-main">
             <?php
             while (have_posts()) :

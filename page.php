@@ -25,15 +25,8 @@ if ($page_slider) { ?>
 <?php } ?>
 
 <main id="primary" class="site-main">
-	<div class="breadcrumbs">
-		<div class="uk-container uk-padding-small">
-			<?php if ( function_exists('yoast_breadcrumb') ) {
-				yoast_breadcrumb('<p id="breadcrumbs" class="">','</p>');
-			} ?>
-		</div>
-	</div>
+	<?php get_template_part( 'partials/components/breadcrumbs' );
 
-	<?php
 		while ( have_posts() ) :
 			the_post();
 			get_template_part( 'template-parts/content', 'page' );

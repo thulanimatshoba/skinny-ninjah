@@ -1,4 +1,7 @@
-<?php
-    if (function_exists('yoast_breadcrumb')) {
-        yoast_breadcrumb('<p id="breadcrumbs" class="uk-float-right">', '</p>');
-    }
+<div class="breadcrumbs">
+    <div class="uk-container uk-padding-small uk-text-right">
+        <?php if ( function_exists('yoast_breadcrumb') ) {
+            yoast_breadcrumb('<p id="breadcrumbs" class="">','</p>');
+        } ?>
+    </div>
+</div>
