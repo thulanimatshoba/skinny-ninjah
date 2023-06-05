@@ -56,12 +56,18 @@
 	a {
 		display: block;
 		text-decoration: none;
+
+		&:hover {
+			color: $color_primary !important;
+		}
 	}
 
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
+	.current_page_parent > a,
 	.current-menu-ancestor > a {
+		color: $color_primary;
 	}
 }
 

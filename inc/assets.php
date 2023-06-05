@@ -9,6 +9,7 @@ function skinny_ninjah_scripts() {
 
     wp_enqueue_script( 'skinny-ninjah-navigation', get_template_directory_uri() . '/js/navigation.js', array(), SKINNY_NINJAH_VERSION, true );
     wp_enqueue_script( 'skinny-ninjah', get_template_directory_uri() . '/js/skinny-ninjah.js', array(), SKINNY_NINJAH_VERSION, true );
+    //wp_enqueue_script( 'loadmore', get_template_directory_uri() . '/js/loadmore.js', array(), SKINNY_NINJAH_VERSION, true );
 
     //UIKit
     wp_enqueue_style( 'uikit', '//cdn.jsdelivr.net/npm/uikit@3.16.17/dist/css/uikit.min.css' );
@@ -23,4 +24,3 @@ function skinny_ninjah_scripts() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'skinny_ninjah_scripts' );
-

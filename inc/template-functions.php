@@ -142,3 +142,63 @@ function remove_website_field_on_comments( $fields )
         unset( $fields['url']);
     return $fields;
 }
+
+/**
+ * @param $limit
+ * This is a filter to show a limited number of words that i title can show
+ */
+function skinny_ninjah_title($limit)
+{
+    global $post;
+
+    $title = get_the_title($post->ID);
+    if (strlen($title) > $limit) {
+        $title = substr($title, 0, $limit) . '...';
+    }
+
+    echo $title;
+}
+
+function skinny_ninjah_excerpt_length($length)
+{
+    return 100;
+}
+add_filter('excerpt_length', 'skinny_ninjah_excerpt_length', 999);
+
+
+/**
+ * @param $text
+ * @return bool|string
+ * Trimmed Excerpt
+ */
+function tm_length_excerpt($text)
+{
+    if (is_admin()) {
+        return $text;
+    }
+    $read_more = '&hellip; <a class="skinny-ninjah-button read-more-link uk-button uk-button-default" href="' . get_the_permalink() . '">Read more</a>';
+    // Fetch the post content directly
+    $text = get_the_content();
+    // Clear out shortcodes
+    $text = strip_shortcodes($text);
+    // Get the first 140 characteres
+    $text = substr($text, 0, 180);
+    // Add a read more tag
+    $text .= $read_more;
+    return $text;
+}
+// Leave priority at default of 10 to allow further filtering
+add_filter('wp_trim_excerpt', 'tm_length_excerpt', 10, 1);
+
+/**
+ * @param $mimes
+ * @return mixed
+ *  This allows you to upload SVG's
+ */
+function cc_mime_types($mimes)
+{
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+

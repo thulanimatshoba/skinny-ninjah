@@ -8,7 +8,7 @@ $our_clients = carbon_get_the_post_meta('our_clients');
     if ($our_clients) {
         foreach ($our_clients as $clients) : ?>
             <li>
-                <figure class="clients-thumbnail uk-float-left" uk-img="loading: eager">
+                <figure class="clients-thumbnail uk-float-left">
                     <?= wp_get_attachment_image($clients['client_logo'], 'featured-square'); ?>
                 </figure>
             </li>

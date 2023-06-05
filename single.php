@@ -22,10 +22,10 @@ get_header();
 		<div class="uk-container">
 			<?php
 			the_post_navigation(
-				array(
+				[
 					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'skinny-ninjah' ) . '</span> <span class="nav-title">%title</span>',
 					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'skinny-ninjah' ) . '</span> <span class="nav-title">%title</span>',
-				)
+				]
 			);
 
 			// If comments are open or we have at least one comment, load up the comment template.

@@ -40,7 +40,7 @@ $our_clients = carbon_get_the_post_meta('our_clients');
         <?php } ?>
 
         <?php if ($our_clients) : ?>
-            <div class="footer-logos">
+            <div class="our-clients">
                 <div class="uk-container uk-padding">
                     <?php get_template_part('partials/components/page-our-clients', 'block'); ?>
                 </div>
