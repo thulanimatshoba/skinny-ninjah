@@ -46,7 +46,10 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
-<?php wp_footer(); ?>
+<?php
+	wp_footer();
+	get_template_part('partials/modals/login-register','modal');
+?>
 
 </body>
 </html>

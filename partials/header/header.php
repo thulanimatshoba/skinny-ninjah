@@ -6,7 +6,9 @@
 
         <nav id="site-navigation" class="uk-navbar-right main-navigation">
             <button class="uk-navbar-toggle menu-toggle uk-hidden@s" uk-navbar-toggle-icon href="#" uk-toggle="target: #offcanvas-push"></button>
-            <?php get_template_part('partials/menus/header', 'menu'); ?>
+            <?php get_template_part('partials/menus/header', 'menu');
+            get_template_part('partials/header/login', 'button')
+            ?>
         </nav><!-- #site-navigation -->
     </div>
 </header><!-- #masthead -->

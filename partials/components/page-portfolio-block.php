@@ -14,7 +14,7 @@
         <?php
         foreach ($portfolio_blocks as $blocks) :
             $portfolio_category = $blocks['portfolio_category'];
-            ?>
+        ?>
             <li id="<?= $portfolio_category ?>" class="uk-inline" uk-filter-control="[data-filter='<?= $portfolio_category ?>']">
                 <a href="#"><?= $portfolio_category ?></a>
             </li>

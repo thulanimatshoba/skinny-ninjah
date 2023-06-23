@@ -176,7 +176,7 @@ function tm_length_excerpt($text)
     if (is_admin()) {
         return $text;
     }
-    $read_more = '&hellip; <a class="skinny-ninjah-button read-more-link uk-button uk-button-default" href="' . get_the_permalink() . '">Read more</a>';
+    $read_more = '&hellip; <a class="read-more-link" href="' . get_the_permalink() . '">Read more</a>';
     // Fetch the post content directly
     $text = get_the_content();
     // Clear out shortcodes

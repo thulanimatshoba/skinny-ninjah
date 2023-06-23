@@ -35,7 +35,23 @@ get_header(); ?>
                     <div id="post-<?php echo get_the_ID(); ?>" <?php ($c === 1 ? post_class('category-article uk-width-2-3@s featured-post') : post_class('category-article uk-width-1-3@s')); ?>>
                         <div class="post-thumbnail uk-position-relative">
                             <a href="<?php the_permalink(); ?>">
-                                <?php ( has_post_thumbnail() ? the_post_thumbnail('featured-featured uk-position-relative uk-position-z-index') : '<img src="' . get_stylesheet_directory() . '/images/ninjah.png" />'); ?>
+                                <?php
+                                if ( has_post_thumbnail() ) {
+                                    the_post_custom_thumbnail(
+                                        get_the_ID(),
+                                        'featured-thumbnail',
+                                        [
+                                            'sizes' => '(max-width: 650px) 650px, 100vw',
+                                            'class' => 'featured-featured uk-position-relative uk-position-z-index',
+                                        ]
+                                    );
+                                } else {
+                                    ?>
+                                    <img src="https://via.placeholder.com/510x340" class="uk-position-relative uk-position-z-index" alt="Card image cap">
+                                    <?php
+                                }
+                                ?>
+                                <?php //( has_post_thumbnail() ? the_post_thumbnail('featured-featured uk-position-relative uk-position-z-index') : '<img src="' . get_stylesheet_directory() . '/images/ninjah.png" />'); ?>
                             </a>
 
                             <div class="uk-article-meta post-date">
