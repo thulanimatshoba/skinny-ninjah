@@ -333,7 +333,7 @@ html {
 }
 
 a {
-	color: #41cb52;
+	color: #76324b;
 }
 
 a:hover, a:focus, a:active {
@@ -575,6 +575,7 @@ big {
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
 	display: inline-block;
+	max-width: 80px;
 }
 
 .wp-caption {
@@ -822,7 +823,7 @@ big {
 	top: 100%;
 	left: -999em;
 	z-index: 99999;
-	background: #f00;
+	background: #76324b;
 }
 
 .main-navigation ul ul ul {
@@ -848,10 +849,11 @@ big {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+	color: #fff;
 }
 
 .main-navigation a:hover {
-	color: #41cb52 !important;
+	color: #76324b !important;
 }
 
 .main-navigation .current_page_item > a,
@@ -859,7 +861,7 @@ big {
 .main-navigation .current_page_ancestor > a,
 .main-navigation .current_page_parent > a,
 .main-navigation .current-menu-ancestor > a {
-	color: #41cb52;
+	color: #76324b;
 }
 
 .site-main .comment-navigation, .site-main
@@ -887,6 +889,40 @@ big {
 	flex: 1 0 50%;
 }
 
+.ninjah-menu ul li a {
+	color: #fff;
+}
+
+#topcontrol .fa, nav.wcv-dashboard-navigation ul li a {
+	border-radius: 50%;
+	box-shadow: 4px 4px 10px -2px rgba(0, 0, 0, 0.4);
+	color: #fff;
+	font-size: 20px;
+	height: 50px;
+	line-height: 45px;
+	text-align: center;
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+	width: 50px;
+	z-index: 999;
+	background-size: 100% 200% !important;
+	background-image: linear-gradient(to bottom, #76324b 50%, #fff 50%) !important;
+}
+
+#topcontrol .fa:hover, nav.wcv-dashboard-navigation ul li a:hover {
+	color: #76324b;
+	background: #76324b;
+	background-position: -200% 100% !important;
+	border-radius: 0;
+}
+
+div#topcontrol {
+	z-index: 2;
+}
+
 /* Posts and pages
 --------------------------------------------- */
 /* Header */
@@ -901,7 +937,7 @@ header#masthead {
 }
 
 header#masthead.uk-sticky-below {
-	background: -webkit-linear-gradient(left, #362f2d, #534741);
+	background: #636468;
 	border-bottom: none;
 	box-shadow: 1px 2px 4px #00000042;
 }
@@ -934,6 +970,22 @@ header#masthead .uk-navbar:after {
 	top: 0;
 	bottom: 0;
 	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.waves-top-shape {
+	top: -40px;
+}
+
+.waves-top-shape svg {
+	width: 100%;
+	height: 40px;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%) rotate(180deg);
+}
+
+.waves-top-shape svg path.skinny-ninjah-shape-fill {
+	fill: #fff;
 }
 
 /* Portfolio */
@@ -1009,6 +1061,34 @@ header#masthead .uk-navbar:after {
 
 .info-block li.info-block-list h4:after {
 	content: "+";
+}
+
+/* Company Values */
+.company-values .uk-grid-small > * {
+	padding-left: 0;
+}
+
+.company-values .uk-card-default, .company-values .uk-card-secondary {
+	background: #76324b;
+	color: #fff;
+}
+
+.company-values .uk-card-default .uk-card-title, .company-values .uk-card-secondary .uk-card-title {
+	color: #fff;
+}
+
+.company-values .uk-card-primary {
+	background: #636468;
+}
+
+/* Our Clients */
+.our-clients {
+	background: #636468;
+}
+
+.our-clients figure.clients-thumbnail {
+	max-width: 190px;
+	margin: auto;
 }
 
 #primary.site-main {
@@ -1120,7 +1200,7 @@ figure {
 /* Footer */
 footer#colophon {
 	background: #191919;
-	color: #666;
+	color: #fff;
 	width: 100%;
 	position: relative;
 	z-index: 1;
@@ -1152,7 +1232,7 @@ footer#colophon .footer-top ul li:last-child {
 
 footer#colophon .site-info {
 	background-color: transparent;
-	background-image: linear-gradient(275deg, #191919 39%, #f00 100%);
+	background-image: linear-gradient(275deg, #191919 39%, #76324b 100%);
 }
 
 #loader-wrapper #loader {

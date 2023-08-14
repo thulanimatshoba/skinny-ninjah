@@ -31,6 +31,45 @@ $our_clients = carbon_get_the_post_meta('our_clients');
             ?>
         </div>
 
+        <!-- todo: move this into its own component -->
+        <div class="company-values">
+            <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <h3 class="uk-card-title">Our Values</h3>
+                        <p>Sed molestie mattis lacus in facilisis. Fusce mi diam, aliquet ac dictum eget, eleifend quis elit. Nullam bibendum purus mi,
+                            eget viverra ligula fringilla sed. Quisque at consequat massa. Sed luctus commodo nunc mollis tincidunt.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="uk-card uk-card-primary uk-card-body">
+                        <h3 class="uk-card-title">Our Philosophy</h3>
+                        <p>Sed molestie mattis lacus in facilisis. Fusce mi diam, aliquet ac dictum eget, eleifend quis elit. Nullam bibendum purus mi,
+                            eget viverra ligula fringilla sed. Quisque at consequat massa. Sed luctus commodo nunc mollis tincidunt.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="uk-card uk-card-secondary uk-card-body">
+                        <h3 class="uk-card-title">Our Mission</h3>
+                        <p>Sed molestie mattis lacus in facilisis. Fusce mi diam, aliquet ac dictum eget, eleifend quis elit. Nullam bibendum purus mi,
+                            eget viverra ligula fringilla sed. Quisque at consequat massa. Sed luctus commodo nunc mollis tincidunt.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="">
+            <div class="uk-container">
+                <h2 class="uk-text-center">What can we offer for you?</h2>
+                <p class="uk-text-center">Architecture</p>
+                <p class="uk-text-center">Advisory</p>
+                <p class="uk-text-center">Turnkey</p>
+                <p class="uk-text-center">Housing</p>
+
+            </div>
+
+        </div>
+
         <?php if ($info_blocks) { ?>
             <div class="info-block uk-position-relative uk-padding-large" uk-scrollspy="cls: uk-animation-scale-up; target: .uk-slider-items; delay: 300; repeat: false">
                 <div class="uk-container">
@@ -38,6 +77,13 @@ $our_clients = carbon_get_the_post_meta('our_clients');
                 </div>
             </div>
         <?php } ?>
+
+        <div class="latest-news">
+            <div class="uk-container">
+                <h3 class="uk-text-center">Our Latest Articles</h3>
+                <?php get_template_part('partials/components/latest', 'articles'); ?>
+            </div>
+        </div>
 
         <?php if ($our_clients) : ?>
             <div class="our-clients">

@@ -1,5 +1,6 @@
 <?php
 
+use Carbon_Fields\Block;
 use Carbon_Fields\Carbon_Fields;
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
@@ -9,7 +10,7 @@ function skinny_ninjah_post_meta()
 {
     /* Page Slider */
     Container::make('post_meta', __('Page Slider', 'skinny-ninjah'))
-        ->where( 'post_type', '=', 'page' )
+        ->where( 'post_id', '=', get_option( 'page_on_front' ) )
         ->add_fields([
             Field::make('complex', 'skinny_ninjah_slider', 'Add your slides below.')
                 ->set_layout('tabbed-vertical')
@@ -151,7 +152,7 @@ function skinny_ninjah_post_meta()
 
     /* Page Info Block */
     Container::make('post_meta', __('Small Info', 'skinny-ninjah'))
-        ->where( 'post_type', '=', 'page' )
+        ->where( 'post_id', '=', get_option( 'page_on_front' ) )
         ->add_fields([
             Field::make('complex', 'page_info_block', '')
                 ->set_layout('tabbed-horizontal')
@@ -178,7 +179,7 @@ function skinny_ninjah_post_meta()
 
     /* Page Our Clients */
     Container::make('post_meta', __('Our Clients', 'skinny-ninjah'))
-        ->where( 'post_type', '=', 'page' )
+        ->where( 'post_id', '=', get_option( 'page_on_front' ) )
         ->add_fields([
             Field::make('text', 'our_client_section_title'),
             Field::make('complex', 'our_clients', '')
@@ -196,6 +197,52 @@ function skinny_ninjah_post_meta()
                 <% } %> '
                 ),
         ]);
+
+    /* Our Clients Block */
+    Block::make( __( 'Our clients logo slider' ) )
+        ->add_fields([
+            Field::make('text', 'our_client_section_title'),
+            Field::make('complex', 'our_clients', '')
+                ->set_layout('tabbed-horizontal')
+                ->add_fields([
+                    Field::make('text', 'client_name', 'Client Name')->set_width(30),
+                    Field::make('image', 'client_logo', 'Client Logo')->set_width(30),
+                ])
+                ->set_header_template(
+                    '
+                <% if (client_name) { %>
+                    <%- client_name %>
+                <% } else { %>
+                    empty
+                <% } %> '
+                ),
+        ])
+        ->set_icon( 'groups' )
+        ->set_category( 'layout' )
+        ->set_description( __( 'Add logos to display them as a slider block consisting of a heading, an image.' ) )
+        ->set_render_callback( function () {
+            $our_clients = carbon_get_the_post_meta('our_clients');
+            ?>
+
+            <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slider="autoplay: true">
+                <?php
+                echo '<div class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m">';
+                if ($our_clients) {
+                    foreach ($our_clients as $clients) : ?>
+                        <div>
+                            <figure class="clients-thumbnail uk-text-center">
+                                <?= wp_get_attachment_image($clients['client_logo'], 'featured-square'); ?>
+                            </figure>
+                        </div>
+                    <?php endforeach;
+                }
+                echo '</div>';
+                ?>
+                <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+                <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+            </div>
+            <?php
+        } );
 
     /* Portfolio */
     Container::make('post_meta', __('Portfolio', 'skinny-ninjah'))

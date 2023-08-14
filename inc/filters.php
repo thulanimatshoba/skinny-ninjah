@@ -37,7 +37,7 @@ function skinny_ninjah_setup() {
     /**
      * Thumbnail  Custom Sizes
      */
-    add_image_size('featured-thumb', 600, 320, ['center', 'center']);
+    add_image_size('featured-thumb', 450, 340, ['center', 'center']);
     add_image_size('featured-square', 300, 300, ['center', 'center']);
     add_image_size('featured-featured', 1240, 660, ['center', 'center']);
     add_image_size('portfolio-square', 480, 365, ['center', 'center']);

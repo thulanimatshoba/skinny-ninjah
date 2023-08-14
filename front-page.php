@@ -17,13 +17,13 @@ if ($homepage_slider) { ?>
     <div class="home-slider uk-text-center">
         <?php get_template_part('partials/components/page-slider') ?>
     </div>
-<?php } else { ?>
-    <div>
-        <img src="/wp-content/uploads/2023/05/slider4-1421x780.jpeg" width="100%">
-    </div>
 <?php } ?>
 
-    <main id="primary" class="site-main">
+    <main id="primary" class="site-main uk-position-relative">
+        <div class="waves-top-shape uk-width-1-1 uk-position-absolute" data-negative="false">
+            <?php get_template_part('partials/components/wave', 'svg') ?>
+        </div>
+        
         <?php while (have_posts()) :
             the_post();
             get_template_part('template-parts/pages/content', 'home');

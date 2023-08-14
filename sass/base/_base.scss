@@ -97,7 +97,7 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
   color: $color_dark_grey;
-  border: 1px solid $color__border-input;
+  border: 1px solid $color_grey;
   border-radius: 3px;
   padding: 3px;
 
@@ -107,7 +107,7 @@ textarea {
 }
 
 select {
-  border: 1px solid $color__border-input;
+  border: 1px solid $color_grey;
 }
 
 textarea {
@@ -207,7 +207,7 @@ var {
 
 abbr,
 acronym {
-  border-bottom: 1px dotted $color__border-abbr;
+  border-bottom: 1px dotted $color_dark_grey;
   cursor: help;
 }
 
@@ -233,6 +233,7 @@ big {
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
   display: inline-block;
+  max-width: 80px;
 }
 
 .wp-caption {

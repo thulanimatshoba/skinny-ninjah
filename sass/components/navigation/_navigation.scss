@@ -11,7 +11,7 @@
 			top: 100%;
 			left: -999em;
 			z-index: 99999;
-			background: $color_red;
+			background: $color_primary;
 
 			ul {
 				left: -999em;
@@ -56,6 +56,7 @@
 	a {
 		display: block;
 		text-decoration: none;
+		color: $color_white;
 
 		&:hover {
 			color: $color_primary !important;
@@ -92,3 +93,44 @@
 		flex: 1 0 50%;
 	}
 }
+
+.ninjah-menu {
+	ul {
+		li {
+			a {
+				color: $color_white;
+			}
+		}
+	}
+}
+
+#topcontrol .fa, nav.wcv-dashboard-navigation ul li a {
+    border-radius: 50%;
+    box-shadow: 4px 4px 10px -2px rgba(0,0,0,0.4);
+    color: $color_white;
+    font-size: 20px;
+    height: 50px;
+    line-height: 45px;
+    text-align: center;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    width: 50px;
+    z-index: 999;
+    background-size: 100% 200% !important;
+    background-image: linear-gradient(to bottom, $color_primary 50%, $color_white 50%) !important;
+}
+
+#topcontrol .fa:hover, nav.wcv-dashboard-navigation ul li a:hover {
+    color: $color_primary;
+    background: $color_primary;
+    background-position: -200% 100% !important;
+    border-radius: 0;
+}
+
+div#topcontrol {
+    z-index: 2;
+}
+

@@ -9,8 +9,7 @@
 
         <ul class="uk-switcher uk-margin">
             <li><?php wp_login_form(); ?></li>
-            <li><?php echo do_shortcode("[register_form]"); ?><?php //get_template_part('partials/user/registration-form');
-                ?></li>
+            <li><?php echo do_shortcode("[register role='subscriber']");?></li>
         </ul>
     </div>
 </div>
