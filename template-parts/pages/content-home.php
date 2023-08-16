@@ -58,22 +58,28 @@ $our_clients = carbon_get_the_post_meta('our_clients');
             </div>
         </div>
 
-        <div class="">
-            <div class="uk-container">
-                <h2 class="uk-text-center">What can we offer for you?</h2>
-                <p class="uk-text-center">Architecture</p>
-                <p class="uk-text-center">Advisory</p>
-                <p class="uk-text-center">Turnkey</p>
-                <p class="uk-text-center">Housing</p>
-
+        <div class="our-services">
+            <div class="uk-container uk-padding-large uk-padding-remove-bottom">
+                <?php get_template_part('partials/components/homepage-services', 'block'); ?>
             </div>
+        </div>
 
+        <div class="our-team">
+            <div class="uk-container uk-padding-large">
+                <?= get_template_part('partials/components/homepage-team', 'block'); ?>
+            </div>
         </div>
 
         <?php if ($info_blocks) { ?>
-            <div class="info-block uk-position-relative uk-padding-large" uk-scrollspy="cls: uk-animation-scale-up; target: .uk-slider-items; delay: 300; repeat: false">
-                <div class="uk-container">
+            <div class="info-block uk-position-relative" uk-scrollspy="cls: uk-animation-scale-up; target: .uk-slider-items; delay: 300; repeat: false">
+                <div class="svg-border border-top-svg uk-position-absolute uk-width">
+                    <?php get_template_part('partials/svg/top-border', 'svg'); ?>
+                </div>
+                <div class="uk-container uk-padding-large">
                     <?= get_template_part('partials/components/page-info', 'block'); ?>
+                </div>
+                <div class="svg-border border-bottom-svg uk-position-absolute uk-width">
+                    <?php get_template_part('partials/svg/top-border', 'svg'); ?>
                 </div>
             </div>
         <?php } ?>

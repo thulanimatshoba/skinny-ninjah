@@ -66,6 +66,71 @@ header#masthead {
 	}
 }
 
+/* Our Services */
+.our-services {
+
+}
+
+/* Our Team */
+.our-team {
+	background: $color_cream_white;
+
+	figure.team-thumb {
+		border-radius: 100%;
+		overflow: hidden;
+		border: 2px solid $color_primary;
+		width: 200px;
+		margin: auto;
+		transition: all 400ms ease-in-out;
+
+		img {
+			filter: grayscale(100%);
+
+			&:hover {
+				filter: grayscale(0);
+			}
+		}
+
+		&:hover {
+			border-color: $color_secondary;
+			border-radius: 0;
+		}
+	}
+
+	.uk-text-muted {
+		color: $color_primary !important;
+	}
+
+	.description-block {
+		max-height: 120px;
+		position: relative;
+		overflow: hidden;
+		padding: 5px 5px;
+		margin: 10px 0;
+		border-top: 1px solid #634f2724;
+
+		.read-more {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			margin: 0;
+			padding: 30px 0 30px 0;
+			/* "transparent" only works here because == rgba(0,0,0,0) */
+			background-image: -moz-linear-gradient(top, transparent, $color_cream_white);
+			background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(1, $color_cream_white));
+			z-index: 1;
+
+			.uk-button-primary {
+				background-color: $color_primary;
+
+				&:hover {
+					background-color: #5d1c34;
+				}
+			}
+		}
+	}
+}
+
 /* Portfolio */
 #portfolio {
 	.category-block {
@@ -120,7 +185,31 @@ header#masthead {
 
 /* Page Info Block */
 .info-block {
-	background: $color_bg_gradient;
+	background: $color_primary;
+	overflow: hidden;
+
+	.border-top-svg {
+
+		path.ninjah-shape-fill {
+			fill: $color_cream_white;
+		}
+	}
+
+	.border-bottom-svg {
+		bottom: 0;
+		left: 50%;
+		svg {
+			transform: translate(-50%) rotate(180deg);
+		}
+
+		path.ninjah-shape-fill {
+			fill: $color_white;
+		}
+	}
+
+	svg {
+		height: 40px;
+	}
 
 	li.info-block-list {
 		.list-container:after {
@@ -139,7 +228,6 @@ header#masthead {
 			}
 		}
 		h4 {
-			//font-size: 30px;
 			&:after {
 				content: "+";
 			}
@@ -165,7 +253,6 @@ header#masthead {
 	.uk-card-primary {
 		background:  $color_secondary;
 	}
-
 }
 
 /* Our Clients */
@@ -201,7 +288,7 @@ header#masthead {
 			height: 23px;
 			display: inline-block;
 			background: $color_bg_gradient;
-			color: white;
+			color: $color_white;
 			text-align: center;
 			border-radius: 100%;
 			line-height: 23px;

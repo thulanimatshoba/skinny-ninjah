@@ -988,6 +988,67 @@ header#masthead .uk-navbar:after {
 	fill: #fff;
 }
 
+/* Our Services */
+/* Our Team */
+.our-team {
+	background: #f8f8f8;
+}
+
+.our-team figure.team-thumb {
+	border-radius: 100%;
+	overflow: hidden;
+	border: 2px solid #76324b;
+	width: 200px;
+	margin: auto;
+	transition: all 400ms ease-in-out;
+}
+
+.our-team figure.team-thumb img {
+	filter: grayscale(100%);
+}
+
+.our-team figure.team-thumb img:hover {
+	filter: grayscale(0);
+}
+
+.our-team figure.team-thumb:hover {
+	border-color: #636468;
+	border-radius: 0;
+}
+
+.our-team .uk-text-muted {
+	color: #76324b !important;
+}
+
+.our-team .description-block {
+	max-height: 120px;
+	position: relative;
+	overflow: hidden;
+	padding: 5px 5px;
+	margin: 10px 0;
+	border-top: 1px solid #634f2724;
+}
+
+.our-team .description-block .read-more {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	margin: 0;
+	padding: 30px 0 30px 0;
+	/* "transparent" only works here because == rgba(0,0,0,0) */
+	background-image: -moz-linear-gradient(top, transparent, #f8f8f8);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(1, #f8f8f8));
+	z-index: 1;
+}
+
+.our-team .description-block .read-more .uk-button-primary {
+	background-color: #76324b;
+}
+
+.our-team .description-block .read-more .uk-button-primary:hover {
+	background-color: #5d1c34;
+}
+
 /* Portfolio */
 #portfolio .category-block {
 	padding-left: 0;
@@ -1038,7 +1099,29 @@ header#masthead .uk-navbar:after {
 
 /* Page Info Block */
 .info-block {
-	background: -webkit-linear-gradient(left, #362f2d, #534741);
+	background: #76324b;
+	overflow: hidden;
+}
+
+.info-block .border-top-svg path.ninjah-shape-fill {
+	fill: #f8f8f8;
+}
+
+.info-block .border-bottom-svg {
+	bottom: 0;
+	left: 50%;
+}
+
+.info-block .border-bottom-svg svg {
+	transform: translate(-50%) rotate(180deg);
+}
+
+.info-block .border-bottom-svg path.ninjah-shape-fill {
+	fill: #fff;
+}
+
+.info-block svg {
+	height: 40px;
 }
 
 .info-block li.info-block-list .list-container:after {
@@ -1117,7 +1200,7 @@ header#masthead .uk-navbar:after {
 	height: 23px;
 	display: inline-block;
 	background: -webkit-linear-gradient(left, #362f2d, #534741);
-	color: white;
+	color: #fff;
 	text-align: center;
 	border-radius: 100%;
 	line-height: 23px;

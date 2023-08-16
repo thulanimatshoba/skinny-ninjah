@@ -150,6 +150,53 @@ function skinny_ninjah_post_meta()
                 ),
         ]);
 
+    /* Services */
+    Container::make('post_meta', __('Our Services', 'skinny-ninjah'))
+        ->where('post_id', '=', get_option('page_on_front'))
+        ->add_fields([
+            Field::make('text', 'our_services_section_title', 'Section Title'),
+            Field::make('text', 'our_services_section_description', 'Section Description'),
+            Field::make('image', 'our_service_side_image', 'Services Image')->set_value_type( 'url' )->set_width(30),
+            Field::make('complex', 'our_services', 'Our Services')->set_width(70)
+                ->set_layout('tabbed-horizontal')
+                ->add_fields([
+                    Field::make('text', 'service_name', 'Service Name')->set_width(30),
+                    Field::make('rich_text', 'service_excerpt', 'Service Excerpt')->set_width(70),
+                ])
+                ->set_header_template(
+                    '
+                <% if (service_name) { %>
+                    <%- service_name %>
+                <% } else { %>
+                    empty
+                <% } %> '
+                ),
+        ]);
+
+    /* Home Page Team */
+    Container::make('post_meta', __('Our Team', 'skinny-ninjah'))
+        ->where('post_id', '=', get_option('page_on_front'))
+        ->add_fields([
+            Field::make('text', 'our_team_title', 'Section title'),
+            Field::make('text', 'team_section_description', 'Section description'),
+            Field::make('complex', 'skinny_ninjah_team', '')
+                ->set_layout('tabbed-vertical')
+                ->add_fields([
+                    Field::make('text', 'team_member_name', 'Full Name')->set_width(30),
+                    Field::make('text', 'team_member_position', 'Position')->set_width(30),
+                    Field::make('image', 'team_member_image', 'Profile Picture')->set_width(30),
+                    Field::make('textarea', 'team_member_bio', 'Bio'),
+                ])
+                ->set_header_template(
+                    '
+                <% if (team_member_name) { %>
+                    <%- team_member_name %>
+                <% } else { %>
+                    empty
+                <% } %> '
+                ),
+        ]);
+
     /* Page Info Block */
     Container::make('post_meta', __('Small Info', 'skinny-ninjah'))
         ->where( 'post_id', '=', get_option( 'page_on_front' ) )

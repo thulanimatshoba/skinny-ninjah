@@ -16,6 +16,35 @@ jQuery( document ).ready( function( $ ) {
 		} );
 	} );
 
+	//Home Page Read More
+	let $el, $ps, $up, totalHeight;
+	$( '.description-block .button' ).click( function() {
+		totalHeight = 0;
+		$el = $( this );
+		$p = $el.parent();
+		$up = $p.parent();
+		$ps = $up.find( "p:not('.read-more')" );
+		// measure how tall inside should be by adding together heights of all inside paragraphs (except read-more paragraph)
+		$ps.each( function() {
+			totalHeight += $( this ).outerHeight();
+			// FAIL totalHeight += $(this).css("margin-bottom");
+		} );
+
+		$up
+			.css( {
+				// Set height to prevent instant jumpdown when max height is removed
+				height: $up.height(),
+				'max-height': 9999,
+			} )
+			.animate( {
+				height: totalHeight,
+			} );
+		// fade out read-more
+		$p.fadeOut();
+		// prevent jump-down
+		return false;
+	} );
+
 	//Scroll To Top
 	const scrolltotop = {
 		setting: { startline: 100, scrollto: 0, scrollduration: 1e3, fadeduration: [ 500, 100 ] },
