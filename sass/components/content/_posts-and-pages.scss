@@ -30,10 +30,6 @@ header#masthead {
 }
 
 /* Page Slider */
-.slider-image img {
-	width: 100%;
-}
-
 .slider-image {
 	img {
 		width: 100%;
@@ -47,6 +43,27 @@ header#masthead {
 		top: 0;
 		bottom: 0;
 		background-color: rgba(0,0,0,0.3);
+	}
+}
+
+
+.slider-caption {
+	max-width: 600px !important;
+	h2 {
+		font-weight: 600;
+	}
+
+	p {
+		font-size: 18px;
+	}
+
+	.uk-button-primary {
+		background-color: $color_primary !important;
+		color: $color_white !important;
+
+		&:hover {
+			background-color: #5d1c34 !important;
+		}
 	}
 }
 
@@ -68,6 +85,14 @@ header#masthead {
 
 /* Our Services */
 .our-services {
+
+	h3 {
+		transition: all 200ms ease-in-out;
+	}
+	li.service-blocks:hover > h3 {
+		color: $color_primary;
+		font-weight: 500;
+	}
 
 }
 
@@ -255,6 +280,78 @@ header#masthead {
 	}
 }
 
+/* Blog Section */
+.latest-news {
+
+	.blog-item {
+		.article-story-content {
+			padding: 5px;
+			transition: all 400ms ease-in-out;
+
+			.the-title {
+				transition: 0.5s;
+				h4 {
+					color: $color_primary;
+					font-weight: bold;
+					transition: 0.5s;
+				}
+
+				&:hover {
+					text-decoration: none;
+
+					> h4 {
+						color: #4f3209;
+					}
+				}
+			}
+		}
+
+		&:hover {
+			> .article-story-content {
+				box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.16);
+				border-color: $color_primary;
+			}
+
+			> .article-story-header {
+				box-shadow: 0 -5px 5px 0 rgba(0, 0, 0, 0.16);
+				padding-top: 0;
+			}
+
+			> .article-story-header img {
+				transform: scale(1.1);
+				filter: grayscale(100%);
+			}
+		}
+
+		.article-story-header {
+			position: relative;
+			overflow: hidden;
+			transition: .5s;
+
+			a {
+				display: block;
+				overflow: hidden;
+			}
+
+			img {
+				transition: all 400ms ease-in-out;
+			}
+
+			.uk-meta {
+				padding: 5px 5px 0;
+				color: #999;
+			}
+		}
+	}
+}
+
+/* Testimonials */
+.testimonials {
+	p.description {
+		font-size: 20px;
+	}
+}
+
 /* Our Clients */
 .our-clients {
 	background: $color_secondary;
@@ -394,10 +491,13 @@ footer#colophon {
 	}
 
 	.footer-top {
+		color: #8c8c8c;
 		ul {
 			margin: 0;
 			list-style: none;
 			padding-left: 0;
+			position: relative;
+			z-index: 1;
 
 			li {
 				border-bottom: 1px solid #232323;
@@ -406,7 +506,39 @@ footer#colophon {
 				&:last-child {
 					border-bottom: none;
 				}
+
+				a {
+					color: #8c8c8c;
+
+					&:hover {
+						color: $color_primary;
+						text-decoration: none;
+					}
+				}
+
+				time {
+					opacity: 0.5;
+					font-weight: 500;
+				}
 			}
+		}
+
+
+		//Todo: Add proper classess to below section
+		section#block-6 {
+			position: relative;
+		}
+
+		section#block-6:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 25px;
+			bottom: 0;
+			text-indent: -9999px;
+			background: url(/wp-content/themes/skinny-ninjah/images/contact-details-map.png) no-repeat center center;
+			opacity: 0.11;
 		}
 	}
 	.site-info {
@@ -415,9 +547,82 @@ footer#colophon {
 	}
 }
 
+/** Contact Page **/
+ul.contact-list {
+	padding-left: 0;
+ 	li {
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid $color_grey;
+		list-style: none;
+		position: relative;
+		padding-left: 60px;
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+
+		&::before {
+			content: "\f041";
+			font-family: 'FontAwesome';
+			font-size: 20px;
+			position: absolute;
+			background: $color_primary;
+			padding: 10px;
+			border-radius: 100%;
+			width: 50px;
+			height: 50px;
+			text-align: center;
+			left: 0;
+			color: $color_white;
+			vertical-align: middle;
+		}
+	}
+}
+
+nf-field {
+	display: inline-block;
+	width: 49%;
+
+	&:nth-child(1), &:nth-child(3) {
+		margin-right: 5px;
+	}
+
+	&:nth-child(5) {
+		width: 99%;
+	}
+}
+
+.nf-form-fields-required {
+	display: none;
+}
+
+.nf-form-content .nf-error.field-wrap .nf-field-element:after {
+	height: 25px;
+	width: 25px;
+	line-height: 28px;
+	border-radius: 50%;
+	font-size: 15px;
+	top: 12px;
+	right: 5px;
+}
+
+.nf-form-content textarea.ninja-forms-field {
+	height: 150px !important;
+	background: transparent !important;
+}
+
+.ninja-forms-field {
+	background: transparent !important;
+}
+
+input#nf-field-4 {
+	background: $color_primary !important;
+}
+
 
 //Pre loader Jizz
-
 #loader-wrapper {
 	#loader {
 		display: block;
@@ -524,6 +729,15 @@ footer#colophon {
 			transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 		}
 	}
+}
+
+.skinny-ninjah-overlay {
+	background-color: rgba(117, 50, 73, 0.2);
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 
 /* JavaScript Turned Off */

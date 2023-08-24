@@ -33,22 +33,22 @@ $our_clients = carbon_get_the_post_meta('our_clients');
 
         <!-- todo: move this into its own component -->
         <div class="company-values">
-            <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
-                <div>
+            <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid uk-scrollspy="cls: uk-animation-slide-left-medium; target: .company-values-block; delay: 600; repeat: false">
+                <div class="company-values-block">
                     <div class="uk-card uk-card-default uk-card-body">
                         <h3 class="uk-card-title">Our Values</h3>
                         <p>Sed molestie mattis lacus in facilisis. Fusce mi diam, aliquet ac dictum eget, eleifend quis elit. Nullam bibendum purus mi,
                             eget viverra ligula fringilla sed. Quisque at consequat massa. Sed luctus commodo nunc mollis tincidunt.</p>
                     </div>
                 </div>
-                <div>
+                <div class="company-values-block">
                     <div class="uk-card uk-card-primary uk-card-body">
                         <h3 class="uk-card-title">Our Philosophy</h3>
                         <p>Sed molestie mattis lacus in facilisis. Fusce mi diam, aliquet ac dictum eget, eleifend quis elit. Nullam bibendum purus mi,
                             eget viverra ligula fringilla sed. Quisque at consequat massa. Sed luctus commodo nunc mollis tincidunt.</p>
                     </div>
                 </div>
-                <div>
+                <div class="company-values-block">
                     <div class="uk-card uk-card-secondary uk-card-body">
                         <h3 class="uk-card-title">Our Mission</h3>
                         <p>Sed molestie mattis lacus in facilisis. Fusce mi diam, aliquet ac dictum eget, eleifend quis elit. Nullam bibendum purus mi,
@@ -71,7 +71,7 @@ $our_clients = carbon_get_the_post_meta('our_clients');
         </div>
 
         <?php if ($info_blocks) { ?>
-            <div class="info-block uk-position-relative" uk-scrollspy="cls: uk-animation-scale-up; target: .uk-slider-items; delay: 300; repeat: false">
+            <div class="info-block uk-position-relative">
                 <div class="svg-border border-top-svg uk-position-absolute uk-width">
                     <?php get_template_part('partials/svg/top-border', 'svg'); ?>
                 </div>
@@ -85,9 +85,17 @@ $our_clients = carbon_get_the_post_meta('our_clients');
         <?php } ?>
 
         <div class="latest-news">
-            <div class="uk-container">
-                <h3 class="uk-text-center">Our Latest Articles</h3>
+            <div class="uk-container uk-padding">
                 <?php get_template_part('partials/components/latest', 'articles'); ?>
+            </div>
+        </div>
+
+        <div class="testimonials uk-height uk-background-cover uk-overflow-hidden uk-light" uk-parallax="bgy: -200" style="background-image: url('/wp-content/themes/skinny-ninjah/images/black-bg.jpeg'); background-size: cover; position: relative;">
+            <div class="skinny-ninjah-overlay"></div>
+            <div class="uk-margin-auto uk-margin-auto-vertical">
+                <div class="uk-container uk-padding-small uk-margin-large-bottom uk-margin-medium-top">
+                    <?php get_template_part('partials/components/homepage-testimonials'); ?>
+                </div>
             </div>
         </div>
 

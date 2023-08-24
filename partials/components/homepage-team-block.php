@@ -9,12 +9,12 @@ if ($team_title) : ?>
 <?php endif;
 
 if ($team_section_description) : ?>
-    <p class="uk-text-center section-description">
+    <p class="uk-text-center section-description uk-margin-auto uk-width-1-2@m">
         <?php echo esc_html($team_section_description); ?>
     </p>
 <?php endif; ?>
 
-<div class="uk-position-relative uk-visible-toggle uk-padding uk-padding-remove-bottom uk-padding-remove-left uk-padding-remove-right" tabindex="-1" uk-slider="autoplay: false" uk-scrollspy="cls: uk-animation-scale-up; target: .team-list; delay: 300; repeat: false">
+<div class="uk-position-relative uk-visible-toggle uk-padding uk-padding-remove-bottom uk-padding-remove-left uk-padding-remove-right" tabindex="-1" uk-slider="autoplay: true" uk-scrollspy="cls: uk-animation-scale-up; target: .team-list; delay: 300; repeat: false">
     <ul class="uk-slider-items uk-child-width-1-1 uk-child-width-1-3@s uk-child-width-1-4@m" uk-grid>
         <?php if ($teams_slides) {
             foreach ($teams_slides as $team) {?>

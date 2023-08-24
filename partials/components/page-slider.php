@@ -14,6 +14,7 @@
                     $heading_color = $slides['slider_title_color'];
                     $description = $slides['slider_description'];
                     $show_slider_description = $slides['show_slider_description'];
+                    $show_slider_link = $slides['show_slider_link'];
                     $description_color = $slides['slider_desc_color'];
                     $slider_button_1 = $slides['slider_link_label_1'];
                     $button_link_1 = $slides['slider_link_1'];
@@ -29,28 +30,28 @@
                         } ?>
 
                     </div>
-                    <div class="slider-caption uk-width-1-1 uk-position-small uk-position-center uk-overlay uk-transition-slide-bottom">
+                    <div class="slider-caption uk-position-small uk-position-center uk-overlay" uk-scrollspy="cls: uk-animation-slide-bottom-medium; target: .slide-item; delay: 600; repeat: true">
                         <?php if ($heading) { ?>
-                            <h2 class="uk-transition-slide-left" style="color: <?= $heading_color;?>;">
+                            <h2 class="slide-item" style="color: <?= $heading_color;?>;">
                                 <?= $heading ?>
                             </h2>
                         <?php }
 
                         if ($show_slider_description == 'yes'){ ?>
-                            <p class="description uk-transition-slide-right" style="color: <?= $description_color;?>;">
+                            <p class="uk-width-1-1@m uk-margin-auto description slide-item" style="color: <?= $description_color;?>;">
                                 <?= $description ?>
                             </p>
                         <?php }
 
 
-                        if ($show_slider_heading == 'yes') { ?>
-                            <a class="uk-button uk-button-secondary uk-transition-slide-left-medium" href="<?= $button_link_1 ?>">
+                        if ($show_slider_link == 'yes') { ?>
+                            <a class="uk-button uk-button-primary slide-item" href="<?= $button_link_1 ?>">
                                 <?= $slider_button_1 ?>
                             </a>
                         <?php }
 
-                        if ($slider_button_2) { ?>
-                            <a class="uk-button uk-button-primary uk-transition-slide-right-medium" href="<?= $button_link_2 ?>">
+                        if ($show_slider_link == 'yes') { ?>
+                            <a class="uk-button uk-button-primary slide-item" href="<?= $button_link_2 ?>">
                                 <?= $slider_button_2 ?>
                             </a>
                         <?php } ?>
@@ -58,11 +59,11 @@
                 </li>
             <?php endforeach; ?>
         </ul>
-        
+
         <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
         <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
 
     </div>
     <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin uk-width-1-1 uk-position-absolute uk-position-bottom"></ul>
-    
+
 </div>

@@ -12,7 +12,7 @@
 	<div class="uk-container">
 	<header class="entry-header">
         <div class="uk-container">
-		    <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		    <?php the_title( '<h1 class="entry-title uk-text-center uk-padding">', '</h1>' ); ?>
         </div>
 	</header><!-- .entry-header -->
 

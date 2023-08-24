@@ -14,13 +14,13 @@
 
 <div class="uk-padding uk-padding-remove-bottom uk-padding-remove-left uk-padding-remove-right uk-grid uk-child-width-expand@s" uk-grid uk-scrollspy="cls: uk-animation-slide-left-medium; target: .side-image; delay: 600; repeat: false">
     <div class="side-image uk-text-right">
-        <img src="<?= $our_services_image; ?>" width="350" alt="" />
+        <img src="<?= $our_services_image; ?>" width="361" alt="" />
     </div>
     <ul class="uk-list" uk-scrollspy="cls: uk-animation-slide-bottom; target: .service-blocks; delay: 300; repeat: false">
         <?php if ($our_services) {
             foreach ($our_services as $service) : ?>
-                <li class="service-blocks">
-                    <h3><?= $service['service_name'] ?></h3>
+                <li class="service-blocks uk-margin-medium-bottom uk-margin-remove-top">
+                    <h3 class="uk-margin-small-bottom"><?= $service['service_name'] ?></h3>
                     <span><?= $our_services_description ?></span>
                 </li>
             <?php endforeach;

@@ -5,9 +5,10 @@ $blog_posts_number = 4;
 ?>
 
 <!--<h2 class="widget-title uk-text-center uk-padding-small uk-margin-large-bottom">--><?php //_e($blog_title ); ?><!-- </h2>-->
+<h2 class="uk-text-center uk-margin-large-bottom">Our Latest Articles</h2>
 
 <div uk-slider="autoplay: false; autoplay-interval: 9000">
-    <div class="uk-position-relative uk-visible-toggle" tabindex="-1">
+    <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-scrollspy="cls: uk-animation-scale-up; target: .blog-item; delay: 600; repeat: false">
         <ul class="uk-slider-items uk-child-width-1-1 uk-child-width-1-3@s uk-child-width-1-3@m uk-grid">
             <?php
             if (is_page()) {
@@ -52,9 +53,11 @@ $blog_posts_number = 4;
                                 } ?>
 
                                 <a class="the-title" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                                    <h4><?php the_title(); ?></h4>
+                                    <h4 class="uk-margin-remove-bottom"><?php the_title(); ?></h4>
                                 </a>
-                                <p><?php echo wp_trim_excerpt(); ?></p>
+                                <span class="uk-margin-small-top uk-display-block">
+                                    <?= wp_trim_excerpt(); ?>
+                                </span>
                             </div>
                         </li>
                     <?php endforeach;
@@ -64,8 +67,6 @@ $blog_posts_number = 4;
             }
             ?>
         </ul>
-        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
     </div>
     <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
 </div>

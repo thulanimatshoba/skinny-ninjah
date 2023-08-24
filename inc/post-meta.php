@@ -120,25 +120,72 @@ function skinny_ninjah_post_meta()
                             ]
                         ),
 
+                    Field::make( 'select', 'show_slider_link', 'Show link button' )
+                        ->add_options(
+                            [
+                                'yes' => 'Yes',
+                                'no' => 'No',
+                            ]
+                        ),
                     Field::make('text', 'slider_link_label_1', 'Slider Link Label One')
                         ->set_width(20)
                         ->set_attribute('placeholder', 'Link label')
-                        ->set_help_text( 'Enter your button link label' ),
+                        ->set_help_text( 'Enter your button link label' )
+                        ->set_conditional_logic(
+                            [
+                                'relation' => 'AND',
+                                [
+                                    'field' => 'show_slider_link',
+                                    'value' => 'yes',
+                                    'compare' => '=',
+                                ]
+                            ]
+                        ),
 
                     Field::make('text', 'slider_link_1', 'Slider Link One')
                         ->set_width(20)
                         ->set_attribute('placeholder', 'https//')
-                        ->set_help_text( 'Enter your button link url' ),
+                        ->set_help_text( 'Enter your button link url' )
+                        ->set_conditional_logic(
+                            [
+                                'relation' => 'AND',
+                                [
+                                    'field' => 'show_slider_link',
+                                    'value' => 'yes',
+                                    'compare' => '=',
+                                ]
+                            ]
+                        ),
 
                     Field::make('text', 'slider_link_label_2', 'Slider Link Label Two')
                         ->set_width(20)
                         ->set_attribute('placeholder', 'Link label')
-                        ->set_help_text( 'Enter your button link label' ),
+                        ->set_help_text( 'Enter your button link label' )
+                        ->set_conditional_logic(
+                            [
+                                'relation' => 'AND',
+                                [
+                                    'field' => 'show_slider_link',
+                                    'value' => 'yes',
+                                    'compare' => '=',
+                                ]
+                            ]
+                        ),
 
                     Field::make('text', 'slider_link_2', 'Slider Link Two')
                         ->set_width(20)
                         ->set_attribute('placeholder', 'https//')
-                        ->set_help_text( 'Enter your button link url' ),
+                        ->set_help_text( 'Enter your button link url' )
+                        ->set_conditional_logic(
+                            [
+                                'relation' => 'AND',
+                                [
+                                    'field' => 'show_slider_link',
+                                    'value' => 'yes',
+                                    'compare' => '=',
+                                ]
+                            ]
+                        ),
                 ])
                 ->set_header_template(
                     '
@@ -210,6 +257,8 @@ function skinny_ninjah_post_meta()
                             'fa-coffee' => 'Coffee',
                             'fa-comments-o' => 'Comments',
                             'fa-thumbs-up' => 'Thumbs Up',
+                            'fa-building-circle-check' => 'Building',
+                            'fa-file-circle-check' => 'File'
                         ])->set_width(30),
                     Field::make('text', 'info_block_title', 'Number')->set_width(30),
                     Field::make('text', 'info_block_description', 'Description')->set_width(30),
@@ -245,7 +294,30 @@ function skinny_ninjah_post_meta()
                 ),
         ]);
 
-    /* Our Clients Block */
+    /* Home Page Testimonials */
+    Container::make('post_meta', __('Our Testimonials', 'skinny-ninjah'))
+        ->where( 'post_id', '=', get_option( 'page_on_front' ) )
+        ->add_fields([
+            Field::make('text', 'testimonials_section_title', 'Section title'),
+            Field::make('text', 'testimonials_section_description', 'Section bio'),
+            Field::make('complex', 'testimonials', '')
+                ->set_layout('tabbed-vertical')
+                ->add_fields([
+                    Field::make('text', 'name', 'Full Name')->set_width(30),
+                    Field::make('text', 'position', 'Position')->set_width(30),
+                    Field::make('textarea', 'testimonial', 'Client Testimonial'),
+                ])
+                ->set_header_template(
+                    '
+            <% if (name) { %>
+                <%- name %>
+            <% } else { %>
+                empty
+            <% } %> '
+                ),
+        ]);
+
+    /* Our Clients Slider Block */
     Block::make( __( 'Our clients logo slider' ) )
         ->add_fields([
             Field::make('text', 'our_client_section_title'),
