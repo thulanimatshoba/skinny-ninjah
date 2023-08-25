@@ -2,7 +2,7 @@
 /**
  * Template Name: Contact Us Page
  *
- * This is the template that displays the contact us pages by default.
+ * This is the template that displays the contact us page.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *

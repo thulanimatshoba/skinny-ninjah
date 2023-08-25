@@ -558,8 +558,15 @@ ul.contact-list {
 		position: relative;
 		padding-left: 60px;
 
-		&:last-child {
-			border-bottom: none;
+		@media (min-width: 782px) {
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+
+		strong:nth-child(1) {
+			color: $logo_color;
+			font-size: 20px;
 		}
 
 
@@ -577,8 +584,14 @@ ul.contact-list {
 			left: 0;
 			color: $color_white;
 			vertical-align: middle;
+			box-shadow: 3px 3px 5px #6b6666ad;
 		}
 	}
+}
+
+ul.contact-list li strong:nth-child(1) {
+	color: #636468;
+	font-size: 20px;
 }
 
 nf-field {
@@ -619,6 +632,15 @@ nf-field {
 
 input#nf-field-4 {
 	background: $color_primary !important;
+}
+
+@media (min-width: 782px) {
+	.nice-border {
+		border-image: linear-gradient(180deg, hsla(0, 0, 100%, 0) -30%, $color_nice_border 50%, hsla(0, 0, 100%, 0));
+		border-image-slice: 1;
+		border-right: 2px solid;
+		padding-right: 35px;
+	}
 }
 
 

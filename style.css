@@ -890,8 +890,12 @@ big {
 	flex: 1 0 50%;
 }
 
-.ninjah-menu ul li a {
+.home .ninjah-menu ul li a {
 	color: #fff;
+}
+
+.home .main-navigation .current_page_item > a, .home .main-navigation .current-menu-item > a {
+	color: #76324b;
 }
 
 #topcontrol .fa, nav.wcv-dashboard-navigation ul li a {
@@ -1459,8 +1463,15 @@ ul.contact-list li {
 	padding-left: 60px;
 }
 
-ul.contact-list li:last-child {
-	border-bottom: none;
+@media (min-width: 782px) {
+	ul.contact-list li:last-child {
+		border-bottom: none;
+	}
+}
+
+ul.contact-list li strong:nth-child(1) {
+	color: #636468;
+	font-size: 20px;
 }
 
 ul.contact-list li::before {
@@ -1477,6 +1488,12 @@ ul.contact-list li::before {
 	left: 0;
 	color: #fff;
 	vertical-align: middle;
+	box-shadow: 3px 3px 5px #6b6666ad;
+}
+
+ul.contact-list li strong:nth-child(1) {
+	color: #636468;
+	font-size: 20px;
 }
 
 nf-field {
@@ -1517,6 +1534,15 @@ nf-field:nth-child(5) {
 
 input#nf-field-4 {
 	background: #76324b !important;
+}
+
+@media (min-width: 782px) {
+	.nice-border {
+		border-image: linear-gradient(180deg, rgba(255, 255, 255, 0) -30%, #e2e2e2 50%, rgba(255, 255, 255, 0));
+		border-image-slice: 1;
+		border-right: 2px solid;
+		padding-right: 35px;
+	}
 }
 
 #loader-wrapper #loader {

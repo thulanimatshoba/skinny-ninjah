@@ -94,13 +94,19 @@
 	}
 }
 
-.ninjah-menu {
-	ul {
-		li {
-			a {
-				color: $color_white;
+.home {
+	.ninjah-menu {
+		ul {
+			li {
+				a {
+					color: $color_white;
+				}
 			}
 		}
+	}
+
+	.main-navigation .current_page_item > a, .main-navigation .current-menu-item > a {
+		color: $color_primary;
 	}
 }
 
