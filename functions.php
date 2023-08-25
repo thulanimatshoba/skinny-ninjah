@@ -9,7 +9,7 @@
 
 if ( ! defined( 'SKINNY_NINJAH_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'SKINNY_NINJAH_VERSION', '1.0.0' );
+	define( 'SKINNY_NINJAH_VERSION', '1.0.1' );
 }
 
 require get_template_directory() . '/inc/assets.php';

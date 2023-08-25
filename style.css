@@ -4,16 +4,19 @@ Theme URI: https://github.com/thulanimatshoba/skinny-ninjah
 Author: Thulani Matshoba
 Author URI: http://thulanimatshoba.co.za
 Description: This is a Wordpress theme called Skinny Ninjah... fully customisable
-Version: 1.0.0
+Version: 1.0.1
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 Text Domain: skinny-ninjah
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;800&display=swap");
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
 /* Document
 	 ========================================================================== */
+
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -25,6 +28,7 @@ html {
 
 /* Sections
 	 ========================================================================== */
+
 /**
  * Remove the margin in all browsers.
  */
@@ -50,6 +54,7 @@ h1 {
 
 /* Grouping content
 	 ========================================================================== */
+
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
@@ -71,6 +76,7 @@ pre {
 
 /* Text-level semantics
 	 ========================================================================== */
+
 /**
  * Remove the gray background on active links in IE 10.
  */
@@ -136,6 +142,7 @@ sup {
 
 /* Embedded content
 	 ========================================================================== */
+
 /**
  * Remove the border on images inside links in IE 10.
  */
@@ -145,6 +152,7 @@ img {
 
 /* Forms
 	 ========================================================================== */
+
 /**
  * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
@@ -290,6 +298,7 @@ textarea {
 
 /* Interactive
 	 ========================================================================== */
+
 /*
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
@@ -306,6 +315,7 @@ summary {
 
 /* Misc
 	 ========================================================================== */
+
 /**
  * Add the correct display in IE 10+.
  */
@@ -336,7 +346,9 @@ a {
 	color: #76324b;
 }
 
-a:hover, a:focus, a:active {
+a:hover,
+a:focus,
+a:active {
 	color: #191970;
 }
 
@@ -344,7 +356,8 @@ a:focus {
 	outline: thin dotted;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
 	outline: 0;
 }
 
@@ -381,7 +394,8 @@ input[type="submit"]:hover {
 	border-color: #ccc #bbb #aaa;
 }
 
-button:active, button:focus,
+button:active,
+button:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
 input[type="reset"]:active,
@@ -503,13 +517,29 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: "Raleway", sans-serif !important;
+	font-family: Raleway, sans-serif !important;
 	font-size: 1rem;
 	line-height: 1.5;
 }
 
-.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, h1, h2, h3, h4, h5, h6 {
-	font-family: "Raleway", sans-serif !important;
+.uk-h1,
+.uk-h2,
+.uk-h3,
+.uk-h4,
+.uk-h5,
+.uk-h6,
+.uk-heading-2xlarge,
+.uk-heading-large,
+.uk-heading-medium,
+.uk-heading-small,
+.uk-heading-xlarge,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: Raleway, sans-serif !important;
 }
 
 p {
@@ -655,16 +685,20 @@ big {
 }
 
 .alignleft {
+
 	/*rtl:ignore*/
 	float: left;
+
 	/*rtl:ignore*/
 	margin-right: 1.5em;
 	margin-bottom: 1.5em;
 }
 
 .alignright {
+
 	/*rtl:ignore*/
 	float: right;
+
 	/*rtl:ignore*/
 	margin-left: 1.5em;
 	margin-bottom: 1.5em;
@@ -720,7 +754,7 @@ big {
 .social-links a::before {
 	display: inline-block;
 	padding: 0 5px;
-	font-family: 'FontAwesome';
+	font-family: FontAwesome;
 	font-size: 25px;
 	vertical-align: middle;
 	-webkit-font-smoothing: antialiased;
@@ -729,55 +763,55 @@ big {
 }
 
 .social-links a[href*="facebook.com"]::before {
-	content: '\f082';
+	content: "\f082";
 }
 
 .social-links a[href*="twitter.com"]::before {
-	content: '\f099';
+	content: "\f099";
 }
 
 .social-links a[href*="plus.google.com"]::before {
-	content: '\f0d4';
+	content: "\f0d4";
 }
 
 .social-links a[href*="pinterest.com"]::before {
-	content: '\f0d3';
+	content: "\f0d3";
 }
 
 .social-links a[href*="youtube.com"]::before {
-	content: '\f167';
+	content: "\f167";
 }
 
 .social-links a[href*="vimeo.com"]::before {
-	content: '\f194';
+	content: "\f194";
 }
 
 .social-links a[href*="instagram.com"]::before {
-	content: '\f16d';
+	content: "\f16d";
 }
 
 .social-links a[href*="linkedin.com"]::before {
-	content: '\f08c';
+	content: "\f08c";
 }
 
 .social-links a[href*="rss.com"]::before {
-	content: '\f143';
+	content: "\f143";
 }
 
 .social-links a[href*="dropbox.com"]::before {
-	content: '\f16b';
+	content: "\f16b";
 }
 
 .social-links a[href*="skype.com"]::before {
-	content: '\f17e';
+	content: "\f17e";
 }
 
 .social-links a[href*="strava.com"]::before {
-	content: '\f428';
+	content: "\f428";
 }
 
 .social-links a[href*="tiktok.com"]::before {
-	content: '\e07b';
+	content: "\e07b";
 }
 
 .social-links a:hover[href*="facebook.com"]::before {
@@ -785,11 +819,11 @@ big {
 }
 
 .social-links a:hover[href*="twitter.com"]::before {
-	color: #33ccff;
+	color: #3cf;
 }
 
 .social-links a:hover[href*="instagram.com"]::before {
-	color: #336699;
+	color: #369;
 }
 
 .social-links a:hover[href*="youtube.com"]::before {
@@ -797,16 +831,17 @@ big {
 }
 
 .social-links a:hover[href*="strava.com"]::before {
-	color: #FC4C02;
+	color: #fc4c02;
 }
 
 .social-links a:hover[href*="tiktok.com"]::before {
-	color: #69C9D0;
+	color: #69c9d0;
 }
 
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+
 /* Navigation
 --------------------------------------------- */
 .main-navigation {
@@ -865,8 +900,10 @@ big {
 	color: #76324b;
 }
 
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
+.site-main .comment-navigation,
+.site-main
+.posts-navigation,
+.site-main
 .post-navigation {
 	margin: 0 0 1.5em;
 }
@@ -894,11 +931,13 @@ big {
 	color: #fff;
 }
 
-.home .main-navigation .current_page_item > a, .home .main-navigation .current-menu-item > a {
+.home .main-navigation .current_page_item > a,
+.home .main-navigation .current-menu-item > a {
 	color: #76324b;
 }
 
-#topcontrol .fa, nav.wcv-dashboard-navigation ul li a {
+#topcontrol .fa,
+nav.wcv-dashboard-navigation ul li a {
 	border-radius: 50%;
 	box-shadow: 4px 4px 10px -2px rgba(0, 0, 0, 0.4);
 	color: #fff;
@@ -917,7 +956,8 @@ big {
 	background-image: linear-gradient(to bottom, #76324b 50%, #fff 50%) !important;
 }
 
-#topcontrol .fa:hover, nav.wcv-dashboard-navigation ul li a:hover {
+#topcontrol .fa:hover,
+nav.wcv-dashboard-navigation ul li a:hover {
 	color: #76324b;
 	background: #76324b;
 	background-position: -200% 100% !important;
@@ -930,6 +970,7 @@ div#topcontrol {
 
 /* Posts and pages
 --------------------------------------------- */
+
 /* Header */
 .home header#masthead {
 	position: absolute;
@@ -947,7 +988,7 @@ header#masthead.uk-sticky-below {
 	box-shadow: 1px 2px 4px #00000042;
 }
 
-header#masthead .uk-navbar:after {
+header#masthead .uk-navbar::after {
 	background: url(/wp-content/themes/skinny-ninjah/images/shadow1.png) no-repeat center top;
 	bottom: -41px;
 	content: "";
@@ -963,7 +1004,7 @@ header#masthead .uk-navbar:after {
 	width: 100%;
 }
 
-.slider-image:before {
+.slider-image::before {
 	content: "";
 	position: absolute;
 	left: 0;
@@ -1066,6 +1107,7 @@ header#masthead .uk-navbar:after {
 	width: 100%;
 	margin: 0;
 	padding: 30px 0 30px 0;
+
 	/* "transparent" only works here because == rgba(0,0,0,0) */
 	background-image: -moz-linear-gradient(top, transparent, #f8f8f8);
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(1, #f8f8f8));
@@ -1110,7 +1152,7 @@ header#masthead .uk-navbar:after {
 	color: #fff;
 }
 
-#portfolio .category-block .portfolio-block:after {
+#portfolio .category-block .portfolio-block::after {
 	content: "";
 	position: absolute;
 	left: 0;
@@ -1155,7 +1197,7 @@ header#masthead .uk-navbar:after {
 	height: 40px;
 }
 
-.info-block li.info-block-list .list-container:after {
+.info-block li.info-block-list .list-container::after {
 	content: "";
 	width: 30px;
 	height: 2px;
@@ -1169,11 +1211,11 @@ header#masthead .uk-navbar:after {
 	color: #ccc;
 }
 
-.info-block li.info-block-list i.fa.fa-comments-o:before {
+.info-block li.info-block-list i.fa.fa-comments-o::before {
 	content: "\f0e6";
 }
 
-.info-block li.info-block-list h4:after {
+.info-block li.info-block-list h4::after {
 	content: "+";
 }
 
@@ -1182,12 +1224,14 @@ header#masthead .uk-navbar:after {
 	padding-left: 0;
 }
 
-.company-values .uk-card-default, .company-values .uk-card-secondary {
+.company-values .uk-card-default,
+.company-values .uk-card-secondary {
 	background: #76324b;
 	color: #fff;
 }
 
-.company-values .uk-card-default .uk-card-title, .company-values .uk-card-secondary .uk-card-title {
+.company-values .uk-card-default .uk-card-title,
+.company-values .uk-card-secondary .uk-card-title {
 	color: #fff;
 }
 
@@ -1207,7 +1251,7 @@ header#masthead .uk-navbar:after {
 
 .latest-news .blog-item .article-story-content .the-title h4 {
 	color: #76324b;
-	font-weight: bold;
+	font-weight: 700;
 	transition: 0.5s;
 }
 
@@ -1237,7 +1281,7 @@ header#masthead .uk-navbar:after {
 .latest-news .blog-item .article-story-header {
 	position: relative;
 	overflow: hidden;
-	transition: .5s;
+	transition: 0.5s;
 }
 
 .latest-news .blog-item .article-story-header a {
@@ -1276,6 +1320,7 @@ header#masthead .uk-navbar:after {
 }
 
 @media only screen and (min-width: 640px) {
+
 	#primary.site-main {
 		margin-bottom: 390px;
 	}
@@ -1288,9 +1333,9 @@ header#masthead .uk-navbar:after {
 	line-height: 35px;
 }
 
-.home-page-content-list li:before {
+.home-page-content-list li::before {
 	content: "\f105";
-	font-family: 'FontAwesome';
+	font-family: FontAwesome;
 	width: 23px;
 	height: 23px;
 	display: inline-block;
@@ -1321,18 +1366,19 @@ header#masthead .uk-navbar:after {
 	padding-left: 15px;
 }
 
-.post-thumbnail:before {
+.post-thumbnail::before {
 	transform: rotate(-3deg);
 	left: 10px;
 }
 
-.post-thumbnail:after {
+.post-thumbnail::after {
 	transform: rotate(3deg);
 	right: 10px;
 	left: auto;
 }
 
-.post-thumbnail:before, .post-thumbnail:after {
+.post-thumbnail::before,
+.post-thumbnail::after {
 	position: absolute;
 	content: "";
 	bottom: 33px;
@@ -1385,6 +1431,7 @@ footer#colophon {
 }
 
 @media only screen and (min-width: 640px) {
+
 	footer#colophon {
 		position: fixed;
 		z-index: -1;
@@ -1432,7 +1479,7 @@ footer#colophon .footer-top section#block-6 {
 	position: relative;
 }
 
-footer#colophon .footer-top section#block-6:after {
+footer#colophon .footer-top section#block-6::after {
 	content: "";
 	position: absolute;
 	left: 0;
@@ -1464,6 +1511,7 @@ ul.contact-list li {
 }
 
 @media (min-width: 782px) {
+
 	ul.contact-list li:last-child {
 		border-bottom: none;
 	}
@@ -1476,7 +1524,7 @@ ul.contact-list li strong:nth-child(1) {
 
 ul.contact-list li::before {
 	content: "\f041";
-	font-family: 'FontAwesome';
+	font-family: FontAwesome;
 	font-size: 20px;
 	position: absolute;
 	background: #76324b;
@@ -1501,7 +1549,8 @@ nf-field {
 	width: 49%;
 }
 
-nf-field:nth-child(1), nf-field:nth-child(3) {
+nf-field:nth-child(1),
+nf-field:nth-child(3) {
 	margin-right: 5px;
 }
 
@@ -1513,7 +1562,7 @@ nf-field:nth-child(5) {
 	display: none;
 }
 
-.nf-form-content .nf-error.field-wrap .nf-field-element:after {
+.nf-form-content .nf-error.field-wrap .nf-field-element::after {
 	height: 25px;
 	width: 25px;
 	line-height: 28px;
@@ -1537,6 +1586,7 @@ input#nf-field-4 {
 }
 
 @media (min-width: 782px) {
+
 	.nice-border {
 		border-image: linear-gradient(180deg, rgba(255, 255, 255, 0) -30%, #e2e2e2 50%, rgba(255, 255, 255, 0));
 		border-image-slice: 1;
@@ -1560,14 +1610,15 @@ input#nf-field-4 {
 	z-index: 1001;
 }
 
-#loader-wrapper #loader:before, #loader-wrapper #loader:after {
+#loader-wrapper #loader::before,
+#loader-wrapper #loader::after {
 	content: "";
 	position: absolute;
 	border-radius: 50%;
 	border: 3px solid transparent;
 }
 
-#loader-wrapper #loader:before {
+#loader-wrapper #loader::before {
 	top: 5px;
 	left: 5px;
 	right: 5px;
@@ -1576,7 +1627,7 @@ input#nf-field-4 {
 	animation: spin 3s linear infinite;
 }
 
-#loader-wrapper #loader:after {
+#loader-wrapper #loader::after {
 	top: 15px;
 	left: 15px;
 	right: 15px;
@@ -1586,18 +1637,22 @@ input#nf-field-4 {
 }
 
 @-webkit-keyframes spin {
+
 	0% {
 		transform: rotate(0deg);
 	}
+
 	100% {
 		transform: rotate(360deg);
 	}
 }
 
 @keyframes spin {
+
 	0% {
 		transform: rotate(0deg);
 	}
+
 	100% {
 		transform: rotate(360deg);
 	}
@@ -1608,7 +1663,7 @@ input#nf-field-4 {
 	top: 0;
 	width: 51%;
 	height: 100%;
-	background: #222222;
+	background: #222;
 	z-index: 1000;
 	transform: translateX(0);
 }
@@ -1684,5 +1739,3 @@ input#nf-field-4 {
 .infinity-end.neverending .site-footer {
 	display: block;
 }
-
-/*# sourceMappingURL=style.css.map */
