@@ -58,6 +58,48 @@ $our_clients = carbon_get_the_post_meta('our_clients');
             </div>
         </div>
 
+        <div class="service">
+                     <div class="uk-container">
+                        <h3>Service Title</h3>
+                            <p>Service Description</p> 
+            <div class="progress">
+                <div class="bar" style="width: 24%;">24%</div>
+            </div>
+            </div>
+        </div>
+
+        <style>
+            .service {
+  margin-bottom: 20px;
+}
+
+.progress {
+  background-color: #f1f1f1;
+  height: 30px;
+  position: relative;
+}
+
+.bar {
+  background-color: #4CAF50;
+  height: 100%;
+  text-align: center;
+  line-height: 30px;
+  width: 0;
+  color: white;
+}
+        </style>
+
+<script>
+  const progressBars = document.querySelectorAll('.bar');
+  progressBars.forEach(bar => {
+    const width = bar.style.width;
+    bar.style.width = '0';
+    setTimeout(() => {
+      bar.style.width = width;
+    }, 1000); // Adjust the duration (in milliseconds) as needed
+  });
+</script>
+
         <div class="our-services">
             <div class="uk-container uk-padding-large uk-padding-remove-bottom">
                 <?php get_template_part('partials/components/homepage-services', 'block'); ?>
@@ -83,16 +125,6 @@ $our_clients = carbon_get_the_post_meta('our_clients');
                 </div>
             </div>
         <?php } ?>
-
-
-        <div class="testimonials uk-height uk-background-cover uk-overflow-hidden uk-light" uk-parallax="bgy: -200" style="background-image: url('/wp-content/themes/skinny-ninjah/images/black-bg.jpeg'); background-size: cover; position: relative;">
-            <div class="skinny-ninjah-overlay"></div>
-            <div class="uk-margin-auto uk-margin-auto-vertical">
-                <div class="uk-container uk-padding-small uk-margin-large-bottom uk-margin-medium-top">
-                    <?php get_template_part('partials/components/homepage-testimonials'); ?>
-                </div>
-            </div>
-        </div>
 
         <?php if ($our_clients) : ?>
             <div class="our-clients">

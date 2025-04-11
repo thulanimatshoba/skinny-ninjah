@@ -16,6 +16,28 @@ jQuery( document ).ready( function( $ ) {
 		} );
 	} );
 
+	//Registration Form
+	$( '#red_registration_form' ).on( 'submit', function( e ) {
+		e.preventDefault();
+
+		const form = $( this );
+		const formData = form.serialize();
+
+		$.ajax({
+			type: form.attr( 'method' ),
+			url: form.attr( 'action' ),
+			data: formData,
+			success( response ) {
+				if ( response.success ) {
+					// Registration successful, handle success (e.g., redirect or display a success message).
+				} else {
+					// Registration failed, update the form with validation errors.
+					form.find( '.red_registration_errors' ).html( response.errors );
+				}
+			},
+		} );
+	} );
+
 	//Home Page Read More
 	let $el, $ps, $up, totalHeight;
 	$( '.description-block .button' ).click( function() {

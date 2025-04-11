@@ -6,7 +6,7 @@ use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
 add_action('carbon_fields_register_fields', 'skinny_ninjah_post_meta');
-function skinny_ninjah_post_meta()
+function skinny_ninjah_post_meta(): void
 {
     /* Page Slider */
     Container::make('post_meta', __('Page Slider', 'skinny-ninjah'))
@@ -316,6 +316,33 @@ function skinny_ninjah_post_meta()
             <% } %> '
                 ),
         ]);
+
+    Container::make( 'post_meta', __( 'Related Articles' ) )
+        ->where( 'post_type', '=', 'page' )
+        ->where('post_id', '=', get_option('page_on_front'))
+        ->add_fields( array(
+            Field::make( 'complex', 'crb_sections', 'Sections' )
+                // used as a simple curated "Related posts" listing
+                ->add_fields( 'related_posts', 'Related Posts', array(
+                    Field::make( 'association', 'posts', 'Posts' )
+                        ->set_types( array(
+                            array(
+                                'type' => 'post',
+                                'post_type' => 'post',
+                            ),
+                        ) ),
+                ) ),
+        ) );
+
+
+    Container::make( 'post_meta', 'Custom Data', 'skinny-ninjah' )
+        ->where( 'post_type', '=', 'page' )
+        ->where( 'post_template', '=', 'about-us-page.php' )
+        ->add_fields( [
+            Field::make( 'map', 'sn_location' )
+                ->set_position( 37.423156, -122.084917, 14 ),
+        ]);
+
 
     /* Our Clients Slider Block */
     Block::make( __( 'Our clients logo slider' ) )

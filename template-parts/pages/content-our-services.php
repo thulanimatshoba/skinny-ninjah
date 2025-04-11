@@ -11,7 +11,7 @@ $info_blocks = carbon_get_the_post_meta('page_info_block');
 $our_clients = carbon_get_the_post_meta('our_clients');
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('home-section'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('about-us-section'); ?>>
     <header class="entry-header">
         <div class="uk-container">
             <h1 itemprop="headline" title="<?php the_title(); ?>" class="entry-title uk-text-center uk-padding-small uk-hidden"><?php the_title(); ?></h1>
@@ -29,33 +29,6 @@ $our_clients = carbon_get_the_post_meta('our_clients');
                 'after'  => '</div>',
             ]);
             ?>
-        </div>
-
-        <!-- todo: move this into its own component -->
-        <div class="company-values">
-            <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid uk-scrollspy="cls: uk-animation-slide-left-medium; target: .company-values-block; delay: 600; repeat: false">
-                <div class="company-values-block">
-                    <div class="uk-card uk-card-default uk-card-body">
-                        <h3 class="uk-card-title">Our Values</h3>
-                        <p>Sed molestie mattis lacus in facilisis. Fusce mi diam, aliquet ac dictum eget, eleifend quis elit. Nullam bibendum purus mi,
-                            eget viverra ligula fringilla sed. Quisque at consequat massa. Sed luctus commodo nunc mollis tincidunt.</p>
-                    </div>
-                </div>
-                <div class="company-values-block">
-                    <div class="uk-card uk-card-primary uk-card-body">
-                        <h3 class="uk-card-title">Our Philosophy</h3>
-                        <p>Sed molestie mattis lacus in facilisis. Fusce mi diam, aliquet ac dictum eget, eleifend quis elit. Nullam bibendum purus mi,
-                            eget viverra ligula fringilla sed. Quisque at consequat massa. Sed luctus commodo nunc mollis tincidunt.</p>
-                    </div>
-                </div>
-                <div class="company-values-block">
-                    <div class="uk-card uk-card-secondary uk-card-body">
-                        <h3 class="uk-card-title">Our Mission</h3>
-                        <p>Sed molestie mattis lacus in facilisis. Fusce mi diam, aliquet ac dictum eget, eleifend quis elit. Nullam bibendum purus mi,
-                            eget viverra ligula fringilla sed. Quisque at consequat massa. Sed luctus commodo nunc mollis tincidunt.</p>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <div class="our-services">
@@ -83,22 +56,6 @@ $our_clients = carbon_get_the_post_meta('our_clients');
                 </div>
             </div>
         <?php } ?>
-
-        <div class="latest-news">
-            <div class="uk-container uk-padding">
-        <?php //get_template_part('partials/components/homepage-curated', 'articles'); ?>
-                <?php get_template_part('partials/components/latest', 'articles'); ?>
-            </div>
-        </div>
-
-        <div class="testimonials uk-height uk-background-cover uk-overflow-hidden uk-light" uk-parallax="bgy: -200" style="background-image: url('/wp-content/themes/skinny-ninjah/images/black-bg.jpeg'); background-size: cover; position: relative;">
-            <div class="skinny-ninjah-overlay"></div>
-            <div class="uk-margin-auto uk-margin-auto-vertical">
-                <div class="uk-container uk-padding-small uk-margin-large-bottom uk-margin-medium-top">
-                    <?php get_template_part('partials/components/homepage-testimonials'); ?>
-                </div>
-            </div>
-        </div>
 
         <?php if ($our_clients) : ?>
             <div class="our-clients">

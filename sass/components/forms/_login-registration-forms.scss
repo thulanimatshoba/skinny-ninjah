@@ -1,0 +1,22 @@
+.registration_form {
+  .fa {
+    top: 12px;
+    left: 10px;
+  }
+
+  .uk-input {
+    padding: 20px 20px 20px 30px !important;
+  }
+
+  .red_errors {
+    color: #ee0000;
+    margin-bottom: 12px;
+    width: 450px!important;
+    max-width: 95%!important;
+  }
+  .red_form label::after {
+    content: " *";
+    color: red;
+    font-weight: bold;
+  }
+}
